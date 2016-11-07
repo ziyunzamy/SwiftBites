@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireSwiftyJSON (0.2.0):
+    - Alamofire (~> 4.0)
+    - SwiftyJSON (~> 3.1)
+  - SwiftyJSON (3.1.1)
+  - youtube-ios-player-helper (0.1.6)
+
+DEPENDENCIES:
+  - AlamofireSwiftyJSON
+  - SwiftyJSON
+  - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireSwiftyJSON: 5a49196b8b061e32f5ebc84fa0815300bd8a974e
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+
+PODFILE CHECKSUM: 2bddab57e3ee43d6af8ad221092cf8d7e0e2814e
+
+COCOAPODS: 1.1.1

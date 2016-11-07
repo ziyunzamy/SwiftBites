@@ -1,0 +1,6 @@
+framework module Pods_SwiftBites {
+  umbrella header "Pods-SwiftBites-umbrella.h"
+
+  export *
+  module * { export * }
+}

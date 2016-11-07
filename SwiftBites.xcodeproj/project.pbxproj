@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6F490B265BBF398137C7802 /* Pods_SwiftBitesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */; };
 		BCE97EDB1DD0FCE1003F5F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */; };
 		BCE97EDD1DD0FCE1003F5F32 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EDC1DD0FCE1003F5F32 /* FirstViewController.swift */; };
 		BCE97EDF1DD0FCE1003F5F32 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EDE1DD0FCE1003F5F32 /* SecondViewController.swift */; };
@@ -15,6 +16,8 @@
 		BCE97EE71DD0FCE1003F5F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE97EE51DD0FCE1003F5F32 /* LaunchScreen.storyboard */; };
 		BCE97EF21DD0FCE1003F5F32 /* SwiftBitesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EF11DD0FCE1003F5F32 /* SwiftBitesTests.swift */; };
 		BCE97EFD1DD0FCE1003F5F32 /* SwiftBitesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EFC1DD0FCE1003F5F32 /* SwiftBitesUITests.swift */; };
+		D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */; };
+		F68EE058CAE8A25E4415D127 /* Pods_SwiftBites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D55E0E3CC0BE839E49E24CC /* Pods-SwiftBitesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesTests/Pods-SwiftBitesTests.release.xcconfig"; sourceTree = "<group>"; };
+		44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F3325CA75C90ACA1DAF3D3 /* Pods-SwiftBites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBites.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBites/Pods-SwiftBites.debug.xcconfig"; sourceTree = "<group>"; };
+		8F2C26EBB17AD13E4F9EA1B4 /* Pods-SwiftBitesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesTests/Pods-SwiftBitesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CD34E70FC990EC8369BAF8C /* Pods-SwiftBitesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E1CE95A706CC9CE37B90475 /* Pods-SwiftBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBites.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBites/Pods-SwiftBites.release.xcconfig"; sourceTree = "<group>"; };
+		AE6F7DC2E79881B752C84798 /* Pods-SwiftBitesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BCE97ED71DD0FCE1003F5F32 /* SwiftBites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE97EDC1DD0FCE1003F5F32 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		BCE97EF81DD0FCE1003F5F32 /* SwiftBitesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftBitesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE97EFC1DD0FCE1003F5F32 /* SwiftBitesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBitesUITests.swift; sourceTree = "<group>"; };
 		BCE97EFE1DD0FCE1003F5F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68EE058CAE8A25E4415D127 /* Pods_SwiftBites.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F490B265BBF398137C7802 /* Pods_SwiftBitesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01FEDE68BEBDF6B511A39E52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */,
+				EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */,
+				D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BCE97ECE1DD0FCE1003F5F32 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				BCE97EF01DD0FCE1003F5F32 /* SwiftBitesTests */,
 				BCE97EFB1DD0FCE1003F5F32 /* SwiftBitesUITests */,
 				BCE97ED81DD0FCE1003F5F32 /* Products */,
+				EE45881CCDF80DF8822577A8 /* Pods */,
+				01FEDE68BEBDF6B511A39E52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,19 @@
 			path = SwiftBitesUITests;
 			sourceTree = "<group>";
 		};
+		EE45881CCDF80DF8822577A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57F3325CA75C90ACA1DAF3D3 /* Pods-SwiftBites.debug.xcconfig */,
+				9E1CE95A706CC9CE37B90475 /* Pods-SwiftBites.release.xcconfig */,
+				8F2C26EBB17AD13E4F9EA1B4 /* Pods-SwiftBitesTests.debug.xcconfig */,
+				3D55E0E3CC0BE839E49E24CC /* Pods-SwiftBitesTests.release.xcconfig */,
+				9CD34E70FC990EC8369BAF8C /* Pods-SwiftBitesUITests.debug.xcconfig */,
+				AE6F7DC2E79881B752C84798 /* Pods-SwiftBitesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCE97F011DD0FCE1003F5F32 /* Build configuration list for PBXNativeTarget "SwiftBites" */;
 			buildPhases = (
+				217B7484FCC840E33F07D1E3 /* [CP] Check Pods Manifest.lock */,
 				BCE97ED31DD0FCE1003F5F32 /* Sources */,
 				BCE97ED41DD0FCE1003F5F32 /* Frameworks */,
 				BCE97ED51DD0FCE1003F5F32 /* Resources */,
+				C02B28B17AF9DF4AD3BE404C /* [CP] Embed Pods Frameworks */,
+				AFC1D5EB9677AA89B65029D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCE97F041DD0FCE1003F5F32 /* Build configuration list for PBXNativeTarget "SwiftBitesTests" */;
 			buildPhases = (
+				48854C4872F69D18E1786848 /* [CP] Check Pods Manifest.lock */,
 				BCE97EE91DD0FCE1003F5F32 /* Sources */,
 				BCE97EEA1DD0FCE1003F5F32 /* Frameworks */,
 				BCE97EEB1DD0FCE1003F5F32 /* Resources */,
+				AD1830A54261572AC77E7554 /* [CP] Embed Pods Frameworks */,
+				82E690FFB2F8960EDFEA8C7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCE97F071DD0FCE1003F5F32 /* Build configuration list for PBXNativeTarget "SwiftBitesUITests" */;
 			buildPhases = (
+				9782E36C9E9BD40BC3570F11 /* [CP] Check Pods Manifest.lock */,
 				BCE97EF41DD0FCE1003F5F32 /* Sources */,
 				BCE97EF51DD0FCE1003F5F32 /* Frameworks */,
 				BCE97EF61DD0FCE1003F5F32 /* Resources */,
+				892B5762FA8AD354DE1160C9 /* [CP] Embed Pods Frameworks */,
+				3BB1896E7A9D0A76C7956799 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		217B7484FCC840E33F07D1E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3BB1896E7A9D0A76C7956799 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48854C4872F69D18E1786848 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82E690FFB2F8960EDFEA8C7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBitesTests/Pods-SwiftBitesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		892B5762FA8AD354DE1160C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9782E36C9E9BD40BC3570F11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD1830A54261572AC77E7554 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBitesTests/Pods-SwiftBitesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC1D5EB9677AA89B65029D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBites/Pods-SwiftBites-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C02B28B17AF9DF4AD3BE404C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftBites/Pods-SwiftBites-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCE97ED31DD0FCE1003F5F32 /* Sources */ = {
@@ -412,6 +599,7 @@
 		};
 		BCE97F021DD0FCE1003F5F32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57F3325CA75C90ACA1DAF3D3 /* Pods-SwiftBites.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftBites/Info.plist;
@@ -424,6 +612,7 @@
 		};
 		BCE97F031DD0FCE1003F5F32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E1CE95A706CC9CE37B90475 /* Pods-SwiftBites.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftBites/Info.plist;
@@ -436,6 +625,7 @@
 		};
 		BCE97F051DD0FCE1003F5F32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2C26EBB17AD13E4F9EA1B4 /* Pods-SwiftBitesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -450,6 +640,7 @@
 		};
 		BCE97F061DD0FCE1003F5F32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D55E0E3CC0BE839E49E24CC /* Pods-SwiftBitesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +655,7 @@
 		};
 		BCE97F081DD0FCE1003F5F32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD34E70FC990EC8369BAF8C /* Pods-SwiftBitesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftBitesUITests/Info.plist;
@@ -477,6 +669,7 @@
 		};
 		BCE97F091DD0FCE1003F5F32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE6F7DC2E79881B752C84798 /* Pods-SwiftBitesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftBitesUITests/Info.plist;
