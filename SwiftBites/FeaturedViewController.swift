@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  FeaturedViewController.swift
 //  SwiftBites
 //
 //  Created by Ziyun Zheng on 11/7/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FeaturedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
