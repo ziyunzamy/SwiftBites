@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SearchViewController.swift
 //  SwiftBites
 //
 //  Created by Ziyun Zheng on 11/7/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

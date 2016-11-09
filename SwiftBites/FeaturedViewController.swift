@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FeaturedViewController.swift
 //  SwiftBites
 //
 //  Created by Ziyun Zheng on 11/7/16.
@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
-class SecondViewController: UIViewController {
+class FeaturedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var parser = Parser()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
