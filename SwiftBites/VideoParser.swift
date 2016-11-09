@@ -14,12 +14,12 @@ class VideoParser {
         var videos = [Video]()
         let videoJSON = JSON(data: data as Data)
         for i in 0..<data.length {
-            let videoId = channelJson["items"][i]["id"]["videoId"].string
-            let thumbnail = channelJson["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-            let name = channelJson["items"][i]["snippet"]["title"].string
+            let videoId = videoJSON["items"][i]["id"]["videoId"].string
+            let thumbnail = videoJSON["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
+            let name = videoJSON["items"][i]["snippet"]["title"].string
             
-            let video:Video = Video(videoId: videoId, name:name, thumbnail:thumbnail)
-            videos.append(video: Video)
+            let video:Video = Video(videoId: videoId! as String, name:name! as String, thumbnail:thumbnail! as String)
+            videos.append(video)
         }
         return videos
     }

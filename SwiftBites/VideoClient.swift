@@ -19,14 +19,14 @@ class VideoClient {
         }
         
         let session = URLSession.shared
-        let task = session.dataTask(with:channelURL as NSURL) { data, response, error in
+        let task = session.dataTask(with:channelURL as URL) { data, response, error in
             if let error = error {
                 print("Error fetching channel: \(error)")
-                completion(data)
+                completion(data as NSData?)
                 return
             }
             
-            completion(data)
+            completion(data as NSData?)
         }
         task.resume()
     }

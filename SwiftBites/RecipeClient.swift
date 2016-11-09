@@ -17,7 +17,7 @@ class RecipeClient {
     
     func fetchRecipes(completion: @escaping (NSData?) -> Void) {
         var videoURLString = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAbJzDWQo7GXNqBh89ZpqIf88Dc03wfdZM&part=snippet&id="
-        videoURLString = videoString + videoId
+        videoURLString = videoURLString + videoId
         
         guard let recipeURL = NSURL(string: videoURLString) else {
             print("Error: couldn't create URL from string")
@@ -26,14 +26,14 @@ class RecipeClient {
         }
         
         let session = URLSession.shared
-        let task = session.dataTask(with:videoURLString as NSURL) { data, response, error in
+        let task = session.dataTask(with:recipeURL as URL) { data, response, error in
             if let error = error {
                 print("Error fetching channel: \(error)")
-                completion(data)
+                completion(data as NSData?)
                 return
             }
             
-            completion(data)
+            completion(data as NSData?)
         }
         task.resume()
     }
