@@ -22,6 +22,7 @@
 		BCE97EFD1DD0FCE1003F5F32 /* SwiftBitesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EFC1DD0FCE1003F5F32 /* SwiftBitesUITests.swift */; };
 		BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */; };
 		BCE97F0D1DD100F2003F5F32 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */; };
+		BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */; };
 		D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */; };
 		F68EE058CAE8A25E4415D127 /* Pods_SwiftBites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		BCE97EFE1DD0FCE1003F5F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeVideoCell.swift; sourceTree = "<group>"; };
 		D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				BCE97EE81DD0FCE1003F5F32 /* Info.plist */,
 				BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */,
 				BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */,
+				BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */,
 			);
 			path = SwiftBites;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				BCD255CB1DD105CF005965D8 /* Video.swift in Sources */,
 				BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */,
 				BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */,
+				BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */,
 				BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */,
 				BCE97EDD1DD0FCE1003F5F32 /* FeaturedViewController.swift in Sources */,
 			);
