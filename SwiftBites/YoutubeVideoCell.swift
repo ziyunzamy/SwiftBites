@@ -11,5 +11,4 @@ import UIKit
 class YoutubeVideoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
 }

@@ -136,7 +136,7 @@
                                 </constraints>
                                 <size key="customSize" width="180" height="180"/>
                                 <connections>
-                                    <outlet property="thumbnail" destination="i9N-sV-wBA" id="SBk-fD-yq9"/>
+                                    <outlet property="imageView" destination="i9N-sV-wBA" id="kZ6-Of-6Sp"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

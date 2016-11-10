@@ -11,54 +11,49 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let reuseIdentifier = "YoutubeVideoCell"
     fileprivate let itemsPerRow: CGFloat = 3
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    //TODO:replace results to properties from viewModel
-    var results = [Video]()
-    var video1 = Video()
-    var video2 = Video()
-    var video3 = Video()
+    
+    let viewModel = FeaturedViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        results.append(video1)
-        results.append(video2)
-        results.append(video3)
-        //var parser = Parser()
-        
+        viewModel.refresh { [unowned self] in
+        DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that casn be recreated.
     }
 
     func videoForIndexPath(indexPath: IndexPath) -> Video {
-        return results[(indexPath as NSIndexPath).section]
+        return viewModel.videos[(indexPath as NSIndexPath).section]
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("*****************")
-        print(results.count)
-        return results.count
+        return viewModel.videos.count
     }
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return results.count
+        return viewModel.videos.count
     }
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! YoutubeVideoCell
-        cell.backgroundColor = UIColor.black
-//        let video = videoForIndexPath(indexPath: indexPath as IndexPath)
-//        cell.backgroundColor = UIColor.white
-//        //3
-//        cell.imageView.image = NSURL(string: video.thumbnail)
-//            .flatMap { NSData(contentsOf: $0 as URL) }
-//            .flatMap { UIImage(data: $0 as Data) }
+        let video = videoForIndexPath(indexPath: indexPath as IndexPath)
+        print(video)
+        cell.backgroundColor = UIColor.white
+        let url = NSURL(string: video.thumbnail)!
+        let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        var image = UIImage(data: data as Data)
+        cell.imageView.image = image
         return cell
     }
     //code for modifying the view from https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started
-    
+//    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
