@@ -13,7 +13,7 @@ class VideoParser {
     func parseVideos(data: NSData) -> [Video]? {
         var videos = [Video]()
         let videoJSON = JSON(data: data as Data)
-        for i in 0..<data.length {
+        for i in 0..<videoJSON["items"].count {
             let videoId = videoJSON["items"][i]["id"]["videoId"].string
             let thumbnail = videoJSON["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
             let name = videoJSON["items"][i]["snippet"]["title"].string
