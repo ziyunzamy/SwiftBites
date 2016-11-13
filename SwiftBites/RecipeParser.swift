@@ -9,49 +9,45 @@
 import Foundation
 import SwiftyJSON
 
-class Parser{
-    init(){
-        let videoString = "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAbJzDWQo7GXNqBh89ZpqIf88Dc03wfdZM&part=snippet&id=3jj6QwaCQcU"
+class RecipeParser {
+    func parseRecipe(data: NSData) -> Recipe? {
+        let recipeJSON = JSON(data: data as Data)
         
-        let videoURL: NSURL = NSURL(string: videoString)!
-        let videoData = NSData(contentsOf: videoURL as URL)!
-        let videoJson = JSON(data: videoData as Data)
         
+        let description = recipeJSON["items"][0]["snippet"]["description"].string
+        if let description = description,
+            let videoId = recipeJSON["items"][0]["id"].string,
+            let name = recipeJSON["items"][0]["snippet"]["title"].string,
+            let ingredients = getIngredientsList(description: description) {
+                let recipe = Recipe(videoId: videoId, name: name, ingredients: ingredients)
+                return recipe
+        }
+        return nil
+        
+    }
+    
+    func getIngredientsList(description: String) -> [String]? {
         var startIndex:String.Index?
         var endIndex:String.Index?
         
-        let description = videoJson["items"][0]["snippet"]["description"].string
-        
-        let ingredientResult = description?.range(of: "INGREDIENTS")
+        let ingredientResult = description.range(of: "INGREDIENTS")
         if let range = ingredientResult {
             startIndex = range.upperBound
         }
-        
-        let prepResult = description?.range(of: "PREPARATION")
+        let prepResult = description.range(of: "PREPARATION")
         if let prepRange = prepResult {
             endIndex = prepRange.lowerBound
         }
+        let categories = ["filling", "crust", "pasta crust", "topping", "dipping sauce", "chocolate mix", "cornbread stuffing", "tia's cornbread", "soup", "dumplings", "dressing", "salad", "bake", "broccoli", "cider sauce", "middle layer", "chocolate ganache", "sauce", "stuffing", "*chicken shake", ""]
         if let startIndex = startIndex,
             let endIndex = endIndex{
-            var i = description?[startIndex..<endIndex]
-            i = i?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            let ingredients = i?.components(separatedBy: "\n")
-            print(ingredients)
+            var ing = description[startIndex..<endIndex]
+            ing = ing.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            let ingredients = ing.components(separatedBy: "\n")
+            return ingredients.filter{!categories.contains($0.lowercased())}
         }
-        
-     }
+        return nil
+    }
+    
 }
-
-//class RecipeParser {
-//    func parseRecipe(data: NSData) -> Recipe? {
-//        let recipeJSON = JSON(data: data as Data)
-//        
-//        let videoId = recipeJSON["items"][0]["id"].string
-//        let description = recipeJSON["items"][0]["snippet"]["description"].string
-//        let name = recipeJSON["items"][0]["snippet"]["title"].string
-//        let recipe = Recipe(videoId: videoId!, name: name!, ingredients: description!)
-//        return recipe
-//    }
-//    
-//}
 

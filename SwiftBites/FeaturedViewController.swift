@@ -11,7 +11,7 @@ class FeaturedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var parser = Parser()
+        var parser = RecipeParser()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
