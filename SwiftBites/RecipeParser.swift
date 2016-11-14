@@ -27,26 +27,47 @@ class RecipeParser {
     }
     
     func getIngredientsList(description: String) -> [String]? {
-        var startIndex:String.Index?
-        var endIndex:String.Index?
+        let startIndex:String.Index? = findIngredientsIndex(description: description)
+        let endIndex:String.Index? = findPreparationIndex(description: description)
         
-        let ingredientResult = description.range(of: "INGREDIENTS")
-        if let range = ingredientResult {
-            startIndex = range.upperBound
-        }
-        let prepResult = description.range(of: "PREPARATION")
-        if let prepRange = prepResult {
-            endIndex = prepRange.lowerBound
-        }
-        let categories = ["filling", "crust", "pasta crust", "topping", "toppings", "dipping sauce", "chocolate mix", "cornbread stuffing", "tia's cornbread", "soup", "dumplings", "dressing", "salad", "bake", "broccoli", "cider sauce", "middle layer", "chocolate ganache", "sauce", "stuffing", "*chicken shake", "obatzda cheese mix", "pretzels", "garnish", "strudel", "vanilla pudding mixture", "garnish", "cabbage slaw", "caramel apple filling", "cilantro-lime yogurt sauce", "for the choux pastry:", "for the pastry cream:", "for the icing:", ""]
+        let categories = ["filling", "crust", "pasta crust", "topping", "toppings", "dipping sauce", "chocolate mix", "cornbread stuffing", "tia's cornbread", "soup", "dumplings", "dressing", "salad", "bake", "broccoli", "cider sauce", "middle layer", "chocolate ganache", "sauce", "stuffing", "*chicken shake", "obatzda cheese mix", "pretzels", "garnish", "strudel", "vanilla pudding mixture", "garnish", "cabbage slaw", "caramel apple filling", "cilantro-lime yogurt sauce", "for the choux pastry:", "for the pastry cream:", "for the icing:", "brownie base", "chocolate mousse ice cream layer", ""]
+        
         if let startIndex = startIndex,
-            let endIndex = endIndex{
+            let endIndex = endIndex {
+            // gets the string containing ingredients
             var ing = description[startIndex..<endIndex]
+            // removes trailing, leading, and extra whitespaces
             ing = ing.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            // produces an array from the string
             let ingredients = ing.components(separatedBy: "\n")
+            // filter out elements that are actually categories/titles not ingredients
             return ingredients.filter{!categories.contains($0.lowercased())}
         }
         return nil
+    }
+    
+    func findIngredientsIndex(description: String) -> String.Index? {
+        var startIndex:String.Index?
+        let possible = ["INGREDIENTS", "Ingredients"]
+        let contains = possible.filter{description.contains($0)}
+        if contains.count > 0 {
+            if let index = description.range(of: contains[0]) {
+                startIndex = index.upperBound
+            }
+        }
+        return startIndex
+    }
+    
+    func findPreparationIndex(description: String) -> String.Index? {
+        var endIndex:String.Index?
+        let possible = ["PREPARATION", "Preparation", "INSTRUCTIONS", "Instructions"]
+        let contains = possible.filter{description.contains($0)}
+        if contains.count > 0 {
+            if let index = description.range(of: contains[0]) {
+                endIndex = index.lowerBound
+            }
+        }
+        return endIndex
     }
     
 }
