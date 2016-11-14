@@ -48,7 +48,7 @@ class RecipeParser {
     
     func findIngredientsIndex(description: String) -> String.Index? {
         var startIndex:String.Index?
-        let possible = ["INGREDIENTS", "Ingredients"]
+        let possible = ["INGREDIENTS", "Ingredients", "Ingredients:"]
         let contains = possible.filter{description.contains($0)}
         if contains.count > 0 {
             if let index = description.range(of: contains[0]) {
@@ -60,7 +60,7 @@ class RecipeParser {
     
     func findPreparationIndex(description: String) -> String.Index? {
         var endIndex:String.Index?
-        let possible = ["PREPARATION", "Preparation", "INSTRUCTIONS", "Instructions"]
+        let possible = ["PREPARATION", "Preparation", "INSTRUCTIONS", "Instructions", "Instructions:"]
         let contains = possible.filter{description.contains($0)}
         if contains.count > 0 {
             if let index = description.range(of: contains[0]) {
