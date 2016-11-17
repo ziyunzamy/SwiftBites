@@ -23,10 +23,10 @@ class FeaturedViewModel{
         }
     }
     
-//    func detailViewModelForSectionAtIndexPath(indexPath: NSIndexPath) -> FeaturedViewModel {
-//        let result = FeaturedViewModel(video:self.videos[indexPath.row])
-//        return result
-//    }
+    func detailViewModelForSectionAtIndexPath(indexPath: NSIndexPath) -> VideoDetailViewModel {
+        let result = VideoDetailViewModel(video:self.videos[indexPath.row])
+        return result
+    }
     
     func refresh(completion: @escaping () -> Void) {
         client.fetchVideo { [unowned self] data in

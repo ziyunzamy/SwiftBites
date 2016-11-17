@@ -17,8 +17,12 @@ class VideoParser {
             let videoId = videoJSON["items"][i]["id"]["videoId"].string
             let thumbnail = videoJSON["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
             let name = videoJSON["items"][i]["snippet"]["title"].string
-            let video:Video = Video(videoId: videoId! as String, name:name! as String, thumbnail:thumbnail! as String)
-            videos.append(video)
+            if let vId = videoId,
+                let thumb = thumbnail,
+                let title = name {
+                let video:Video = Video(videoId: vId, name: title, thumbnail: thumb)
+                videos.append(video)
+            }
         }
         return videos
     }

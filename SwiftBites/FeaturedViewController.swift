@@ -15,6 +15,7 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     let viewModel = FeaturedViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Featured Recipes"
         viewModel.refresh { [unowned self] in
         DispatchQueue.main.async {
                 self.collectionView?.reloadData()
@@ -29,11 +30,12 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     }
 
     func videoForIndexPath(indexPath: IndexPath) -> Video {
-        return viewModel.videos[(indexPath as NSIndexPath).section]
+        return viewModel.videos[(indexPath as NSIndexPath).row]
     }
 
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.videos.count
+        return 1
     }
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
@@ -49,7 +51,9 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         let url = NSURL(string: video.thumbnail)!
         let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
         var image = UIImage(data: data as Data)
-        cell.imageView.image = image
+        print(image)
+        print(cell.thumbnail.image)
+        cell.thumbnail.image = image
         return cell
     }
     //code for modifying the view from https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started
@@ -73,6 +77,17 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail"{
+            if let detailVC = segue.destination as? VideoDetailViewController,
+                let cell = sender as? UICollectionViewCell,
+                let indexPath = collectionView?.indexPath(for: cell) {
+                detailVC.viewModel =  viewModel.detailViewModelForSectionAtIndexPath(indexPath: indexPath as NSIndexPath)
+                detailVC.navigationItem.title = "Recipe Detail"
+                navigationItem.backBarButtonItem?.title = "back"
+            }
+        }
     }
 }
 

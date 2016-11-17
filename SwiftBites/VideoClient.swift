@@ -10,7 +10,7 @@ import Foundation
 
 class VideoClient {
     func fetchVideo(completion: @escaping (NSData?) -> Void) {
-        let channelUrlString = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAbJzDWQo7GXNqBh89ZpqIf88Dc03wfdZM&channelId=UCJFp8uSYCjXOMnkUyb3CQ3Q&part=snippet,id&order=date&maxResults=10"
+        let channelUrlString = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAbJzDWQo7GXNqBh89ZpqIf88Dc03wfdZM&channelId=UCJFp8uSYCjXOMnkUyb3CQ3Q&part=snippet,id&order=date&maxResults=50"
         
         guard let channelURL = NSURL(string: channelUrlString) else {
             print("Error: couldn't create URL from string")
