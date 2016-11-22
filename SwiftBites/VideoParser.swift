@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class VideoParser {
-    func parseVideos(data: NSData) -> [Video]? {
+    func parseVideos(data: NSData) -> [Video] {
         var videos = [Video]()
         let videoJSON = JSON(data: data as Data)
         for i in 0..<videoJSON["items"].count {
