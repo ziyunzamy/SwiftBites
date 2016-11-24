@@ -21,7 +21,14 @@ class VideoParserTests: XCTestCase {
         let first = results.first!
         XCTAssertEqual("Mini Sweet Potato Pies", first.name)
         XCTAssertEqual("1qL0DFEFGpE", first.videoId)
-        XCTAssertEqual("https://i.ytimg.com/vi/1qL0DFEFGpE/default.jpg", first.thumbnail)
+        XCTAssertEqual("https://i.ytimg.com/vi/1qL0DFEFGpE/mqdefault.jpg", first.thumbnail)
+        XCTAssertEqual(results.count, 46)
+    }
+    
+    func test_parseVideos_withInvalidJSON() {
+        let data = loadJSONTestData(filename: "invalid-videos")
+        let results = parser.parseVideos(data: data!)
+        XCTAssertEqual(results.count, 0)
     }
     
     // for testing purposes only

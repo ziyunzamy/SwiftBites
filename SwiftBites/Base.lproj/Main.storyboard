@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,12 +60,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="83" y="313" width="209.5" height="41.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="80" y="362.5" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,7 +130,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i9N-sV-wBA"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i9N-sV-wBA">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -165,14 +172,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-WF-FQb">
-                                <frame key="frameInset" minX="16" minY="318" width="359" height="61"/>
+                                <rect key="frame" x="16" y="318" width="359" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-ju-Y8A" customClass="YTPlayerView">
-                                <frame key="frameInset" minY="64" width="375" height="246"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="246"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -192,7 +199,7 @@
         <scene sceneID="TvE-nA-3We">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pnw-4e-itB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Suggested" id="J2W-Zd-Dj5"/>
+                    <tabBarItem key="tabBarItem" title="Suggested" image="lightbulb-small" id="J2W-Zd-Dj5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p3O-6n-qqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -211,7 +218,7 @@
         <scene sceneID="t6R-4z-xN4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nsj-cy-02M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shopping List" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Shopping List" image="shopping" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5r2-hd-zSw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -230,7 +237,7 @@
         <scene sceneID="54j-6k-fKD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jWG-Go-2hj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" id="EYw-1p-w9a"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="saved-small" id="EYw-1p-w9a"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XNH-sn-ODV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -249,7 +256,7 @@
         <scene sceneID="vQ1-nK-Kzr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3OM-xB-vJZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="aGz-Bt-GXs"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="aGz-Bt-GXs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5F4-cm-3Tj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -281,6 +288,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="lightbulb-small" width="30" height="30"/>
+        <image name="saved-small" width="30" height="30"/>
+        <image name="search" width="40" height="40"/>
+        <image name="shopping" width="40" height="40"/>
     </resources>
 </document>

@@ -15,7 +15,7 @@ class VideoParser {
         let videoJSON = JSON(data: data as Data)
         for i in 0..<videoJSON["items"].count {
             let videoId = videoJSON["items"][i]["id"]["videoId"].string
-            let thumbnail = videoJSON["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
+            let thumbnail = videoJSON["items"][i]["snippet"]["thumbnails"]["medium"]["url"].string
             let name = videoJSON["items"][i]["snippet"]["title"].string
             if let vId = videoId,
                 let thumb = thumbnail,
