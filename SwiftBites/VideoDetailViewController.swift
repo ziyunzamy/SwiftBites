@@ -18,6 +18,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     var viewModel: VideoDetailViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorColor = UIColor .clear
         video.load(withVideoId: (viewModel?.videoId())!)
         videoName.text = viewModel?.name()
         viewModel?.refresh { [unowned self] in
