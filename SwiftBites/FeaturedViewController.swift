@@ -9,8 +9,8 @@
 import UIKit
 class FeaturedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     fileprivate let reuseIdentifier = "YoutubeVideoCell"
-    fileprivate let itemsPerRow: CGFloat = 3
-    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    fileprivate let itemsPerRow: CGFloat = 2
+    fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     
     let viewModel = FeaturedViewModel()
     override func viewDidLoad() {

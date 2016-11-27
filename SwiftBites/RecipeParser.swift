@@ -15,18 +15,21 @@ class RecipeParser {
         
         
         let description = recipeJSON["items"][0]["snippet"]["description"].string
-        if let description = description,
-            let videoId = recipeJSON["items"][0]["id"].string,
-            let name = recipeJSON["items"][0]["snippet"]["title"].string,
-            let ingredients = getIngredientsList(description: description) {
-                let recipe = Recipe(videoId: videoId, name: name, ingredients: ingredients)
+        let videoId = recipeJSON["items"][0]["id"].string
+        let name = recipeJSON["items"][0]["snippet"]["title"].string
+        if let desc = description {
+            if let vId = videoId,
+                let title = name {
+                let ingredients = getIngredientsList(description: desc)
+                let recipe = Recipe(videoId: vId, name: title, ingredients: ingredients)
                 return recipe
+            }
         }
         return nil
         
     }
     
-    func getIngredientsList(description: String) -> [String]? {
+    func getIngredientsList(description: String) -> [String] {
         let startIndex:String.Index? = findIngredientsIndex(description: description)
         let endIndex:String.Index? = findPreparationIndex(description: description)
         
@@ -43,7 +46,7 @@ class RecipeParser {
             // filter out elements that are actually categories/titles not ingredients
             return ingredients.filter{!categories.contains($0.lowercased())}
         }
-        return nil
+        return ["No ingredients available for this recipe."]
     }
     
     func findIngredientsIndex(description: String) -> String.Index? {

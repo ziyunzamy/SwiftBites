@@ -8,17 +8,23 @@
 
 import UIKit
 import youtube_ios_player_helper
-class VideoDetailViewController: UIViewController {
+class VideoDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var back: UIButton!
 
     @IBOutlet weak var video: YTPlayerView!
     @IBOutlet weak var videoName: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var viewModel: VideoDetailViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        video.load(withVideoId: (viewModel?.videoId())!)
-        videoName.text = viewModel?.name()
-
+        video.load(withVideoId: (viewModel?.videoId())!, playerVars: ["playsinline": "1", "loop": "1"])
+        videoName.text = viewModel?.name()?.uppercased()
+        viewModel?.refresh { [unowned self] in
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -27,8 +33,16 @@ class VideoDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (viewModel?.numberOfIngredients())!
+    }
     
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+        cell.textLabel?.text = viewModel?.titleForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
