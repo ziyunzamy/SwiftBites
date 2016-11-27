@@ -10,6 +10,11 @@
 		A6F490B265BBF398137C7802 /* Pods_SwiftBitesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */; };
 		BC55168C1DDA2C1A0078D731 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55168B1DDA2C190078D731 /* VideoDetailViewController.swift */; };
 		BC55168E1DDA2C2B0078D731 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55168D1DDA2C2B0078D731 /* VideoDetailViewModel.swift */; };
+		BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */; };
+		BCB334A61DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A21DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift */; };
+		BCB334A71DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A31DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift */; };
+		BCB334A81DEB7EA8003FA6DB /* SavedRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A41DEB7EA8003FA6DB /* SavedRecipe+CoreDataClass.swift */; };
+		BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */; };
 		BCC7AAD61DDE0E6500FB00BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC7AAD41DDE0E6500FB00BD /* Main.storyboard */; };
 		BCC7AAD81DDE3FC300FB00BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */; };
 		BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C21DD103C7005965D8 /* Recipe.swift */; };
@@ -60,6 +65,11 @@
 		AE6F7DC2E79881B752C84798 /* Pods-SwiftBitesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC55168B1DDA2C190078D731 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		BC55168D1DDA2C2B0078D731 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
+		BCB3349E1DEB78B3003FA6DB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		BCB334A21DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedVideo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCB334A31DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedVideo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCB334A41DEB7EA8003FA6DB /* SavedRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCC7AAD51DDE0E6500FB00BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BCD255C21DD103C7005965D8 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -141,6 +151,10 @@
 		BCD255C11DD101F2005965D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCB334A21DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift */,
+				BCB334A31DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift */,
+				BCB334A41DEB7EA8003FA6DB /* SavedRecipe+CoreDataClass.swift */,
+				BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */,
 				BCD255C21DD103C7005965D8 /* Recipe.swift */,
 				BCD255CA1DD105CF005965D8 /* Video.swift */,
 			);
@@ -168,12 +182,12 @@
 		BCE97ECE1DD0FCE1003F5F32 = {
 			isa = PBXGroup;
 			children = (
+				01FEDE68BEBDF6B511A39E52 /* Frameworks */,
 				BCE97ED91DD0FCE1003F5F32 /* SwiftBites */,
 				BCE97EF01DD0FCE1003F5F32 /* SwiftBitesTests */,
 				BCE97EFB1DD0FCE1003F5F32 /* SwiftBitesUITests */,
 				BCE97ED81DD0FCE1003F5F32 /* Products */,
 				EE45881CCDF80DF8822577A8 /* Pods */,
-				01FEDE68BEBDF6B511A39E52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +218,7 @@
 				BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */,
 				BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */,
 				BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */,
+				BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */,
 			);
 			path = SwiftBites;
 			sourceTree = "<group>";
@@ -532,16 +547,21 @@
 				BC55168E1DDA2C2B0078D731 /* VideoDetailViewModel.swift in Sources */,
 				E84829721DD27E43003DF877 /* VideoClient.swift in Sources */,
 				BC55168C1DDA2C1A0078D731 /* VideoDetailViewController.swift in Sources */,
+				BCB334A81DEB7EA8003FA6DB /* SavedRecipe+CoreDataClass.swift in Sources */,
 				BCE97EDF1DD0FCE1003F5F32 /* SearchViewController.swift in Sources */,
 				BCE97EDB1DD0FCE1003F5F32 /* AppDelegate.swift in Sources */,
 				BCE97F0D1DD100F2003F5F32 /* ShopViewController.swift in Sources */,
 				BCFAD92C1DD3D06300AD67D6 /* FeaturedViewModel.swift in Sources */,
 				BCD255C71DD1046C005965D8 /* RecipeParser.swift in Sources */,
 				E84829741DD280D1003DF877 /* VideoParser.swift in Sources */,
+				BCB334A71DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift in Sources */,
+				BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */,
 				BCD255CB1DD105CF005965D8 /* Video.swift in Sources */,
+				BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */,
 				BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */,
 				BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */,
 				BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */,
+				BCB334A61DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift in Sources */,
 				BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */,
 				BCE97EDD1DD0FCE1003F5F32 /* FeaturedViewController.swift in Sources */,
 			);
@@ -819,6 +839,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCB3349E1DEB78B3003FA6DB /* DataModel.xcdatamodel */,
+			);
+			currentVersion = BCB3349E1DEB78B3003FA6DB /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCE97ECF1DD0FCE1003F5F32 /* Project object */;
 }

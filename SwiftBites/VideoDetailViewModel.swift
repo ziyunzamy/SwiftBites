@@ -19,4 +19,7 @@ class VideoDetailViewModel {
     func name() -> String? {
         return self.video.name
     }
+    func thumbnail() -> String? {
+        return self.video.thumbnail
+    }
 }
