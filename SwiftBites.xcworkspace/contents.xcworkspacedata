@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftBites/SavedVideo+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftBites/SavedVideo+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftBites/SavedRecipe+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftBites/SavedRecipe+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:SwiftBites.xcodeproj">
    </FileRef>
    <FileRef
