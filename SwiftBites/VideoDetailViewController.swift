@@ -18,6 +18,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     var viewModel: VideoDetailViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
         video.load(withVideoId: (viewModel?.videoId())!)
         videoName.text = viewModel?.name()?.uppercased()
         viewModel?.refresh { [unowned self] in
