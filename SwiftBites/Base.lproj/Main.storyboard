@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -171,22 +172,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-WF-FQb">
-                                <rect key="frame" x="16" y="318" width="359" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-WF-FQb">
+                                <rect key="frame" x="16" y="337" width="359" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="bpV-mq-gOb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bpV-mq-gOb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bpV-mq-gOb"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-ju-Y8A" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="24" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE0-h3-YLQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="24" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE0-h3-YLQ">
                                 <rect key="frame" x="0.0" y="372" width="375" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="wok-Ez-1RM"/>
+                                </constraints>
                                 <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="36" id="mFr-CY-8HS">
@@ -203,8 +213,24 @@
                                     <outlet property="delegate" destination="lyi-fr-0Eg" id="P4k-77-nH9"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-ju-Y8A" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="265"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZKp-WF-FQb" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leadingMargin" id="1HP-4F-mHQ"/>
+                            <constraint firstAttribute="trailing" secondItem="lLg-ju-Y8A" secondAttribute="trailing" id="DSU-NX-hFD"/>
+                            <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leading" id="EYk-8U-C8c"/>
+                            <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="nE0-h3-YLQ" secondAttribute="leading" id="Jp4-c0-lFC"/>
+                            <constraint firstItem="nE0-h3-YLQ" firstAttribute="bottom" secondItem="HT6-1K-XtE" secondAttribute="top" id="MHG-3L-Ijw"/>
+                            <constraint firstItem="lLg-ju-Y8A" firstAttribute="trailing" secondItem="nE0-h3-YLQ" secondAttribute="trailing" id="MSN-uC-EEx"/>
+                            <constraint firstItem="ZKp-WF-FQb" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="bottom" constant="8" symbolic="YES" id="ROE-mf-0zY"/>
+                            <constraint firstItem="nE0-h3-YLQ" firstAttribute="top" secondItem="ZKp-WF-FQb" secondAttribute="bottom" constant="15" id="Yjc-dA-rBo"/>
+                            <constraint firstItem="lLg-ju-Y8A" firstAttribute="top" secondItem="zod-yi-QjX" secondAttribute="bottom" id="e25-4b-EYG"/>
+                            <constraint firstItem="ZKp-WF-FQb" firstAttribute="trailing" secondItem="nE0-h3-YLQ" secondAttribute="trailing" id="w05-m5-q1P"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nE0-h3-YLQ" id="p8e-Ud-bnL"/>
