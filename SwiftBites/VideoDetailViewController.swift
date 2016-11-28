@@ -55,7 +55,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
         // Pass the selected object to the new view controller.
     }
     */
-    func saveVideo() {
+    @IBAction func saveVideo() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // create an instance of our managedObjectContext
         let moc = appDelegate.managedObjectContext
@@ -75,7 +75,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             fatalError("Failure to save context: \(error)")
         }
     }
-    func saveRecipe() {
+    @IBAction func saveRecipe() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // create an instance of our managedObjectContext
         let moc = appDelegate.managedObjectContext
@@ -95,23 +95,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             fatalError("Failure to save context: \(error)")
         }
     }
-    func fetchVideo() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        // create an instance of our managedObjectContext
-        let moc = appDelegate.managedObjectContext
-        let request: NSFetchRequest<NSFetchRequestResult> = SavedVideo.fetchRequest()
-        
-        do {
-            let request = try moc.fetch(request) as! [SavedVideo]
-            print("S********\(request.count)")
-            print("S********videoId\(request.first?.videoId)")
-            print("S********name\(request.first?.name)")
-            print("S********thumbnail\(request.first?.thumbnail)")
-            
-        } catch {
-            fatalError("Failed to fetch person: \(error)")
-        }
-    }
+    
     func fetchRecipe() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // create an instance of our managedObjectContext
