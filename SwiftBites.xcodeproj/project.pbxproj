@@ -35,6 +35,13 @@
 		D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */; };
 		E84829721DD27E43003DF877 /* VideoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84829711DD27E43003DF877 /* VideoClient.swift */; };
 		E84829741DD280D1003DF877 /* VideoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84829731DD280D1003DF877 /* VideoParser.swift */; };
+		E8638AD91DE7492D0039A89A /* invalid-videos.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638AD81DE7492D0039A89A /* invalid-videos.json */; };
+		E8638ADB1DE74F630039A89A /* RecipeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8638ADA1DE74F630039A89A /* RecipeParserTests.swift */; };
+		E8638ADD1DE7505A0039A89A /* recipe-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638ADC1DE7505A0039A89A /* recipe-response.json */; };
+		E8638ADF1DE751A00039A89A /* noingredients-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638ADE1DE751A00039A89A /* noingredients-response.json */; };
+		E8638AE31DE7531D0039A89A /* invalid-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638AE21DE7531D0039A89A /* invalid-response.json */; };
+		E86480DB1DE402440025CEF4 /* videos-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E86480DA1DE402440025CEF4 /* videos-response.json */; };
+		E86480DF1DE402990025CEF4 /* VideoParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86480DE1DE402990025CEF4 /* VideoParserTests.swift */; };
 		F68EE058CAE8A25E4415D127 /* Pods_SwiftBites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +103,13 @@
 		D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84829711DD27E43003DF877 /* VideoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoClient.swift; sourceTree = "<group>"; };
 		E84829731DD280D1003DF877 /* VideoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoParser.swift; sourceTree = "<group>"; };
+		E8638AD81DE7492D0039A89A /* invalid-videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "invalid-videos.json"; sourceTree = "<group>"; };
+		E8638ADA1DE74F630039A89A /* RecipeParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeParserTests.swift; sourceTree = "<group>"; };
+		E8638ADC1DE7505A0039A89A /* recipe-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "recipe-response.json"; sourceTree = "<group>"; };
+		E8638ADE1DE751A00039A89A /* noingredients-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "noingredients-response.json"; sourceTree = "<group>"; };
+		E8638AE21DE7531D0039A89A /* invalid-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "invalid-response.json"; sourceTree = "<group>"; };
+		E86480DA1DE402440025CEF4 /* videos-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "videos-response.json"; sourceTree = "<group>"; };
+		E86480DE1DE402990025CEF4 /* VideoParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoParserTests.swift; sourceTree = "<group>"; };
 		EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,6 +240,8 @@
 		BCE97EF01DD0FCE1003F5F32 /* SwiftBitesTests */ = {
 			isa = PBXGroup;
 			children = (
+				E86480DD1DE4027B0025CEF4 /* Parsers */,
+				E86480D91DE401FF0025CEF4 /* Resources */,
 				BCE97EF11DD0FCE1003F5F32 /* SwiftBitesTests.swift */,
 				BCE97EF31DD0FCE1003F5F32 /* Info.plist */,
 			);
@@ -248,6 +264,27 @@
 				BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */,
 			);
 			name = FeaturedView;
+			sourceTree = "<group>";
+		};
+		E86480D91DE401FF0025CEF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E86480DA1DE402440025CEF4 /* videos-response.json */,
+				E8638AD81DE7492D0039A89A /* invalid-videos.json */,
+				E8638ADC1DE7505A0039A89A /* recipe-response.json */,
+				E8638ADE1DE751A00039A89A /* noingredients-response.json */,
+				E8638AE21DE7531D0039A89A /* invalid-response.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E86480DD1DE4027B0025CEF4 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				E86480DE1DE402990025CEF4 /* VideoParserTests.swift */,
+				E8638ADA1DE74F630039A89A /* RecipeParserTests.swift */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 		EE45881CCDF80DF8822577A8 /* Pods */ = {
@@ -389,6 +426,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8638ADF1DE751A00039A89A /* noingredients-response.json in Resources */,
+				E8638AE31DE7531D0039A89A /* invalid-response.json in Resources */,
+				E86480DB1DE402440025CEF4 /* videos-response.json in Resources */,
+				E8638AD91DE7492D0039A89A /* invalid-videos.json in Resources */,
+				E8638ADD1DE7505A0039A89A /* recipe-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86480DF1DE402990025CEF4 /* VideoParserTests.swift in Sources */,
+				E8638ADB1DE74F630039A89A /* RecipeParserTests.swift in Sources */,
 				BCE97EF21DD0FCE1003F5F32 /* SwiftBitesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
