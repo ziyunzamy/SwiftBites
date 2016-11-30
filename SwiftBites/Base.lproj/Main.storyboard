@@ -43,13 +43,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedVideoCell" rowHeight="82" id="rvE-Fd-h1d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedVideoCell" rowHeight="82" id="rvE-Fd-h1d" customClass="SavedVideoTableViewCell" customModule="SwiftBites" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rvE-Fd-h1d" id="olk-af-str">
                                             <frame key="frameInset" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBz-fl-buJ">
+                                                    <frame key="frameInset" minX="139" minY="30" width="228" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-UN-RvG">
+                                                    <frame key="frameInset" minX="8" minY="-24" width="102" height="105"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="hBz-fl-buJ" id="Tny-c5-UpH"/>
+                                            <outlet property="thumbnail" destination="Btn-UN-RvG" id="CQ0-3v-1m6"/>
+                                            <segue destination="lyi-fr-0Eg" kind="show" identifier="showDetailFromSaved" id="6N2-qd-TMk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -105,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3837.5999999999999" y="881.10944527736137"/>
+            <point key="canvasLocation" x="4094" y="171"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -314,7 +332,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iA-2L-f30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2898.4000000000001" y="881.10944527736137"/>
+            <point key="canvasLocation" x="3727" y="963"/>
         </scene>
         <!--Saved-->
         <scene sceneID="54j-6k-fKD">
@@ -363,4 +381,7 @@
         <image name="shopping" width="40" height="40"/>
         <image name="shopping-empty" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6N2-qd-TMk"/>
+    </inferredMetricsTieBreakers>
 </document>
