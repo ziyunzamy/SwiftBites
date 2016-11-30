@@ -21,7 +21,9 @@ class VideoDetailViewModel {
     func name() -> String? {
         return self.video.name
     }
-
+    func isSaved() -> Bool {
+        return self.video.saved
+    }
     func thumbnail() -> String? {
         return self.video.thumbnail
     }

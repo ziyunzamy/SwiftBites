@@ -13,6 +13,7 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var savedVideosTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Saved Recipes"
         savedVideos = fetchVideo()
         self.savedVideosTableView?.reloadData()
 
@@ -54,10 +55,6 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         do {
             let request = try moc.fetch(request) as! [SavedVideo]
-            print("S********\(request.count)")
-            print("S********videoId\(request.first?.videoId)")
-            print("S********name\(request.first?.name)")
-            print("S********thumbnail\(request.first?.thumbnail)")
             return request
         } catch {
             fatalError("Failed to fetch person: \(error)")

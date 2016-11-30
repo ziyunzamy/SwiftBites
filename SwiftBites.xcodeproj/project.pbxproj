@@ -153,6 +153,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC182FD11DEF4FDE00D8544E /* SavedView */ = {
+			isa = PBXGroup;
+			children = (
+				BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */,
+			);
+			name = SavedView;
+			sourceTree = "<group>";
+		};
 		BC5516891DDA2AFD0078D731 /* DetailedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +226,7 @@
 		BCE97ED91DD0FCE1003F5F32 /* SwiftBites */ = {
 			isa = PBXGroup;
 			children = (
+				BC182FD11DEF4FDE00D8544E /* SavedView */,
 				BC5516891DDA2AFD0078D731 /* DetailedView */,
 				BCFAD92A1DD3D04300AD67D6 /* FeaturedView */,
 				BCD255C51DD10415005965D8 /* Parser */,
@@ -229,7 +238,6 @@
 				BCE97EE31DD0FCE1003F5F32 /* Assets.xcassets */,
 				BCE97EE51DD0FCE1003F5F32 /* LaunchScreen.storyboard */,
 				BCE97EE81DD0FCE1003F5F32 /* Info.plist */,
-				BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */,
 				BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */,
 				BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */,
 				BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */,
