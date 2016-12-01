@@ -404,7 +404,6 @@
 				TargetAttributes = {
 					BCE97ED61DD0FCE1003F5F32 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 585KA8MC65;
 						ProvisioningStyle = Automatic;
 					};
 					BCE97EEC1DD0FCE1003F5F32 = {
@@ -790,7 +789,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 585KA8MC65;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftBites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ziyunz.SwiftBites;
@@ -805,7 +804,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 585KA8MC65;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftBites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ziyunz.SwiftBites;

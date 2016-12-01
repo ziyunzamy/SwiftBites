@@ -200,21 +200,4 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    func fetchRecipe() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        // create an instance of our managedObjectContext
-        let moc = appDelegate.managedObjectContext
-        let request: NSFetchRequest<NSFetchRequestResult> = SavedRecipe.fetchRequest()
-        
-        do {
-            let request = try moc.fetch(request) as! [SavedRecipe]
-            print("S********\(request.count)")
-            print("S********videoId\(request.first?.videoId)")
-            print("S********name\(request.first?.name)")
-            print("S********ingredients\(request.first?.ingredients)")
-        } catch {
-            fatalError("Failed to fetch person: \(error)")
-        }
-    }
-    
 }
