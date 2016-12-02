@@ -13,9 +13,11 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     
     @IBAction func loadMoreVideos(sender: UIButton) {
-        viewModel.refresh { [unowned self] in
-            DispatchQueue.main.async {
-                self.collectionView?.reloadData()
+        if let token = viewModel.client.pageToken {
+            viewModel.refresh { [unowned self] in
+                DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                }
             }
         }
     }
