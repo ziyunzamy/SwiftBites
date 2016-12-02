@@ -18,6 +18,8 @@
 		BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */; };
 		BCC7AAD61DDE0E6500FB00BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC7AAD41DDE0E6500FB00BD /* Main.storyboard */; };
 		BCC7AAD81DDE3FC300FB00BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */; };
+		BCCE36CF1DF1D4B900BC02B8 /* ShopListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE36CD1DF1D4B900BC02B8 /* ShopListTableViewCell.swift */; };
+		BCCE36D01DF1D4B900BC02B8 /* ShopListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCE36CE1DF1D4B900BC02B8 /* ShopListTableViewCell.xib */; };
 		BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C21DD103C7005965D8 /* Recipe.swift */; };
 		BCD255C71DD1046C005965D8 /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C61DD1046C005965D8 /* RecipeParser.swift */; };
 		BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C81DD105BB005965D8 /* RecipeClient.swift */; };
@@ -81,6 +83,8 @@
 		BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCC7AAD51DDE0E6500FB00BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BCCE36CD1DF1D4B900BC02B8 /* ShopListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListTableViewCell.swift; sourceTree = "<group>"; };
+		BCCE36CE1DF1D4B900BC02B8 /* ShopListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopListTableViewCell.xib; sourceTree = "<group>"; };
 		BCD255C21DD103C7005965D8 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BCD255C61DD1046C005965D8 /* RecipeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeParser.swift; sourceTree = "<group>"; };
 		BCD255C81DD105BB005965D8 /* RecipeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeClient.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */,
+				BCCE36CD1DF1D4B900BC02B8 /* ShopListTableViewCell.swift */,
+				BCCE36CE1DF1D4B900BC02B8 /* ShopListTableViewCell.xib */,
 			);
 			name = ShoppingListView;
 			sourceTree = "<group>";
@@ -175,7 +181,6 @@
 		BC182FD51DEF934000D8544E /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */,
 				BCE97EDE1DD0FCE1003F5F32 /* SearchViewController.swift */,
 			);
 			name = SearchView;
@@ -257,6 +262,7 @@
 				BCD255C11DD101F2005965D8 /* Models */,
 				BCE97EE51DD0FCE1003F5F32 /* LaunchScreen.storyboard */,
 				BCE97EE31DD0FCE1003F5F32 /* Assets.xcassets */,
+				BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */,
 				BCE97EE81DD0FCE1003F5F32 /* Info.plist */,
 				BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */,
 			);
@@ -446,6 +452,7 @@
 				BCC7AAD61DDE0E6500FB00BD /* Main.storyboard in Resources */,
 				BCE97EE71DD0FCE1003F5F32 /* LaunchScreen.storyboard in Resources */,
 				BCE97EE41DD0FCE1003F5F32 /* Assets.xcassets in Resources */,
+				BCCE36D01DF1D4B900BC02B8 /* ShopListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +635,7 @@
 				BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */,
 				BCD255CB1DD105CF005965D8 /* Video.swift in Sources */,
 				BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */,
+				BCCE36CF1DF1D4B900BC02B8 /* ShopListTableViewCell.swift in Sources */,
 				BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */,
 				BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */,
 				BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */,

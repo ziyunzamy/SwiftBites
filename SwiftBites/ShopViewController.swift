@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class ShopViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var savedRecipes: [SavedRecipe]?
     fileprivate let reuseIdentifier = "singleShoppinglist"
     @IBOutlet weak var shoppinglistTableView: UITableView!
