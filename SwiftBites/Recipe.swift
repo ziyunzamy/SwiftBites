@@ -11,4 +11,5 @@ struct Recipe {
     let name: String
     let ingredients: [String]
     let saved:Bool = false
+    var collapsed: Bool = true
 }

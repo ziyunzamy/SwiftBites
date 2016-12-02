@@ -21,7 +21,7 @@ class RecipeParser {
             if let vId = videoId,
                 let title = name {
                 let ingredients = getIngredientsList(description: desc)
-                let recipe = Recipe(videoId: vId, name: title, ingredients: ingredients)
+                let recipe = Recipe(videoId: vId, name: title, ingredients: ingredients, collapsed:true)
                 return recipe
             }
         }
