@@ -11,4 +11,5 @@ struct Video {
     let videoId: String
     let name: String
     let thumbnail: String
+    let saved:Bool = false
 }

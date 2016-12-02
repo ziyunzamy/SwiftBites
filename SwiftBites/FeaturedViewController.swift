@@ -46,13 +46,10 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! YoutubeVideoCell
         let video = videoForIndexPath(indexPath: indexPath as IndexPath)
-        print(video)
         cell.backgroundColor = UIColor.white
         let url = NSURL(string: video.thumbnail)!
         let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
         var image = UIImage(data: data as Data)
-        print(image)
-        print(cell.thumbnail.image)
         cell.thumbnail.image = image
         return cell
     }

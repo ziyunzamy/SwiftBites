@@ -10,4 +10,5 @@ struct Recipe {
     let videoId: String
     let name: String
     let ingredients: [String]
+    let saved:Bool = false
 }
