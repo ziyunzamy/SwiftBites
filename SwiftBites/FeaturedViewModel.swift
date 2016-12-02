@@ -8,7 +8,6 @@
 
 import Foundation
 class FeaturedViewModel{
-    var nextPageToken: String?
     var videos = [Video]()
     let client = VideoClient()
     let parser = VideoParser()
@@ -32,8 +31,7 @@ class FeaturedViewModel{
     func refresh(completion: @escaping () -> Void) {
         client.fetchVideo { [unowned self] data in
             self.videos += self.parser.parseVideos(data: data!)
-            self.nextPageToken = self.parser.parseNextPageToken(data: data!)
-            print("modelToken", self.nextPageToken)
+            self.client.pageToken = self.parser.parseNextPageToken(data: data!)
             completion()
         }
     }
