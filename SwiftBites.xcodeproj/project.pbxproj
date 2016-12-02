@@ -43,6 +43,7 @@
 		E8638AE31DE7531D0039A89A /* invalid-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638AE21DE7531D0039A89A /* invalid-response.json */; };
 		E86480DB1DE402440025CEF4 /* videos-response.json in Resources */ = {isa = PBXBuildFile; fileRef = E86480DA1DE402440025CEF4 /* videos-response.json */; };
 		E86480DF1DE402990025CEF4 /* VideoParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86480DE1DE402990025CEF4 /* VideoParserTests.swift */; };
+		E889E6A71DF1C4A500379C3E /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E889E6A61DF1C4A500379C3E /* LoadMoreFooterView.swift */; };
 		F68EE058CAE8A25E4415D127 /* Pods_SwiftBites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C295EAC3975BE17A77CD43 /* Pods_SwiftBites.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		E8638AE21DE7531D0039A89A /* invalid-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "invalid-response.json"; sourceTree = "<group>"; };
 		E86480DA1DE402440025CEF4 /* videos-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "videos-response.json"; sourceTree = "<group>"; };
 		E86480DE1DE402990025CEF4 /* VideoParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoParserTests.swift; sourceTree = "<group>"; };
+		E889E6A61DF1C4A500379C3E /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
 		EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -289,6 +291,7 @@
 				BCE97EDC1DD0FCE1003F5F32 /* FeaturedViewController.swift */,
 				BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */,
 				BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */,
+				E889E6A61DF1C4A500379C3E /* LoadMoreFooterView.swift */,
 			);
 			name = FeaturedView;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				TargetAttributes = {
 					BCE97ED61DD0FCE1003F5F32 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CAUJUYR58Q;
 						ProvisioningStyle = Automatic;
 					};
 					BCE97EEC1DD0FCE1003F5F32 = {
@@ -625,6 +629,7 @@
 				BCD255C71DD1046C005965D8 /* RecipeParser.swift in Sources */,
 				E84829741DD280D1003DF877 /* VideoParser.swift in Sources */,
 				BCB334A71DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift in Sources */,
+				E889E6A71DF1C4A500379C3E /* LoadMoreFooterView.swift in Sources */,
 				BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */,
 				BCD255CB1DD105CF005965D8 /* Video.swift in Sources */,
 				BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */,
@@ -789,10 +794,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CAUJUYR58Q;
 				INFOPLIST_FILE = SwiftBites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ziyunz.SwiftBites;
+				PRODUCT_BUNDLE_IDENTIFIER = KarenSegal.SwiftBites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -804,10 +809,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CAUJUYR58Q;
 				INFOPLIST_FILE = SwiftBites/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ziyunz.SwiftBites;
+				PRODUCT_BUNDLE_IDENTIFIER = KarenSegal.SwiftBites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

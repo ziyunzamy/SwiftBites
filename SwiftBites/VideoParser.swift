@@ -27,4 +27,15 @@ class VideoParser {
         return videos
     }
     
+    func parseNextPageToken(data: NSData) -> String? {
+        let videoJSON = JSON(data: data as Data)
+        let pageToken = videoJSON["nextPageToken"].string
+        if let token = pageToken {
+            return token
+        }
+        else {
+            return nil
+        }
+    }
+    
 }

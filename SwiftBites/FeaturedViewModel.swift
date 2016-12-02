@@ -30,7 +30,8 @@ class FeaturedViewModel{
     
     func refresh(completion: @escaping () -> Void) {
         client.fetchVideo { [unowned self] data in
-            self.videos = self.parser.parseVideos(data: data!)
+            self.videos += self.parser.parseVideos(data: data!)
+            self.client.pageToken = self.parser.parseNextPageToken(data: data!)
             completion()
         }
     }

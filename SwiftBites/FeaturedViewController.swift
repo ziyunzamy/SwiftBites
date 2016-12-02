@@ -12,10 +12,20 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     
+    @IBAction func loadMoreVideos(sender: UIButton) {
+        if let token = viewModel.client.pageToken {
+            viewModel.refresh { [unowned self] in
+                DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                }
+            }
+        }
+    }
+    
     let viewModel = FeaturedViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Featured Recipes"
+        navigationItem.title = "Featured"
         viewModel.refresh { [unowned self] in
         DispatchQueue.main.async {
                 self.collectionView?.reloadData()
@@ -41,6 +51,26 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
                                  numberOfItemsInSection section: Int) -> Int {
         return viewModel.videos.count
     }
+    
+    // https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        //1
+        switch kind {
+        //2
+        case UICollectionElementKindSectionFooter:
+            //3
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: "LoadMoreFooterView",
+                                                                             for: indexPath) as! LoadMoreFooterView
+            return footerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
