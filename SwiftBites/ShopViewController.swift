@@ -31,9 +31,8 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return  (self.recipes.count)
-
+    func numberOfSections(in: UITableView) -> Int{
+        return self.recipes.count
     }
     //cell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,18 +42,17 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = savedRecipes[indexPath.section].ingredients?[indexPath.row]
-//        var recipe:Recipe = self.recipeForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
-//        cell.textLabel?.text = recipe.name
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return recipes[indexPath.section].collapsed ? 0 : 44.0
     }
+    
     // Header
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ?? CollapsibleTableViewHeader(reuseIdentifier: "header")
         
-        header.titleLabel.text = savedRecipes[section].name
+        header.titleLabel.text = recipes[section].name
         header.arrowLabel.text = ">"
         header.setCollapsed(collapsed: recipes[section].collapsed)
         
