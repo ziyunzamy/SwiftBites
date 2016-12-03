@@ -8,38 +8,37 @@
 
 import UIKit
 import CoreData
-class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShopViewController: UITableViewController {
     var savedRecipes: [SavedRecipe] = []
     var recipes: [Recipe] = []
     fileprivate let reuseIdentifier = "singleShoppinglist"
-    @IBOutlet weak var shoppinglistTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Shoppinglist"
         savedRecipes = fetchRecipe()!
         recipes = savedRecipeToRecipe()
-        self.shoppinglistTableView?.reloadData()
+        self.tableView.reloadData()
 
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         savedRecipes = fetchRecipe()!
-        self.shoppinglistTableView?.reloadData()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func numberOfSections(in: UITableView) -> Int{
+    override func numberOfSections(in: UITableView) -> Int{
         return self.recipes.count
     }
     //cell
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (recipes[section].ingredients.count)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = savedRecipes[indexPath.section].ingredients?[indexPath.row]
         return cell
@@ -49,7 +48,7 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // Header
-   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ?? CollapsibleTableViewHeader(reuseIdentifier: "header")
         
         header.titleLabel.text = recipes[section].name
@@ -129,12 +128,12 @@ extension ShopViewController: CollapsibleTableViewHeaderDelegate {
         header.setCollapsed(collapsed: collapsed)
         
         // Adjust the height of the rows inside the section
-        shoppinglistTableView.beginUpdates()
+        self.tableView.beginUpdates()
         for i in 0 ..< recipes[section].ingredients.count {
             let path = NSIndexPath.init(row: i, section: section)
-            shoppinglistTableView.reloadRows(at: [path as IndexPath],with: .automatic)
+            self.tableView.reloadRows(at: [path as IndexPath],with: .automatic)
         }
-        shoppinglistTableView.endUpdates()
+        self.tableView.endUpdates()
     }
     
 }
