@@ -4,6 +4,7 @@
 //
 //  Created by Ziyun Zheng on 12/2/16.
 //  Copyright © 2016 Ziyun Zheng. All rights reserved.
+//  ideas & code snippets partially taken from "https://github.com/jeantimex/ios-swift-collapsible-table-section"
 //
 import UIKit
 

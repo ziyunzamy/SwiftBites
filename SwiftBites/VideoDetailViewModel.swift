@@ -8,7 +8,7 @@
 
 import Foundation
 class VideoDetailViewModel {
-    var ingredients = [String]()
+    var ingredients = [String:Bool]()
     let video:Video
     let parser = RecipeParser()
 
@@ -27,7 +27,7 @@ class VideoDetailViewModel {
     func thumbnail() -> String? {
         return self.video.thumbnail
     }
-    func getIngredients() ->[String] {
+    func getIngredients() ->[String:Bool] {
         return self.ingredients
     }
     
@@ -38,7 +38,8 @@ class VideoDetailViewModel {
     func titleForRowAtIndexPath(indexPath: NSIndexPath) -> String {
         let index = indexPath.row
         if index < ingredients.count {
-            return ingredients[index]
+            let keys = Array(ingredients.keys)
+            return keys[index]
         }
         return ""
     }

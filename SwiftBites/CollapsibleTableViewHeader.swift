@@ -4,6 +4,7 @@
 //
 //  Created by Ziyun Zheng on 12/2/16.
 //  Copyright © 2016 Ziyun Zheng. All rights reserved.
+//  ideas & code snippets partially taken from "https://github.com/jeantimex/ios-swift-collapsible-table-section"
 //
 
 import UIKit
@@ -51,8 +52,9 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.backgroundColor = UIColor(hex: 0x2E3944)
-        
+        contentView.backgroundColor = UIColor(red: 1.00, green: 0.60, blue: 0.00, alpha: 1.0)
+        contentView.layer.borderColor = UIColor.white.cgColor
+        contentView.layer.borderWidth = 0.5
         titleLabel.textColor = UIColor.white
         arrowLabel.textColor = UIColor.white
         
