@@ -34,12 +34,12 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "savedVideoCell", for: indexPath as IndexPath) as! SavedVideoTableViewCell
-        var video:Video = self.videoForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
+        let video:Video = self.videoForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
         cell.name.text = video.name
         cell.backgroundColor = UIColor.white
         let url = NSURL(string: video.thumbnail)!
         let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        var image = UIImage(data: data as Data)
+        let image = UIImage(data: data as Data)
         cell.thumbnail.image = image
         return cell
     }

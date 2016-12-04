@@ -14,7 +14,7 @@ class ShopViewController: UITableViewController {
     var recipes: [Recipe] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Shoppinglist"
+        navigationItem.title = "Shopping List"
         savedRecipes = fetchRecipe()!
         recipes = savedRecipeToRecipe()
         self.tableView.reloadData()
@@ -113,7 +113,7 @@ class ShopViewController: UITableViewController {
         request.predicate = NSPredicate(format: "name == %@", recipes[section].name)
         do {
             let request = try moc.fetch(request) as! [SavedRecipe]
-            var managedObject = request[0]
+            let managedObject = request[0]
             if(checked){
                 cell.setUnchecked()
                 recipes[section].ingredients[keys[index]] = !checked

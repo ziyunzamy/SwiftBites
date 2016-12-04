@@ -85,7 +85,7 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         cell.backgroundColor = UIColor.white
         let url = NSURL(string: video.thumbnail)!
         let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        var image = UIImage(data: data as Data)
+        let image = UIImage(data: data as Data)
         cell.thumbnail.image = image
         return cell
     }
