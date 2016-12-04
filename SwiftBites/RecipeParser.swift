@@ -21,12 +21,20 @@ class RecipeParser {
             if let vId = videoId,
                 let title = name {
                 let ingredients = getIngredientsList(description: desc)
-                let recipe = Recipe(videoId: vId, name: title, ingredients: ingredients)
+                let ingredientsDict = makeDictionary(ingredients: ingredients)
+                let recipe = Recipe(videoId: vId, name: title, ingredients: ingredientsDict, collapsed:true)
                 return recipe
             }
         }
         return nil
         
+    }
+    func makeDictionary(ingredients: [String])-> [String:Bool]{
+        var results: [String:Bool] = [:]
+        for ing in ingredients {
+            results[ing] = false
+        }
+        return results
     }
     
     func getIngredientsList(description: String) -> [String] {
