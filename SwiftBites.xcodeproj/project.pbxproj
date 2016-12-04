@@ -18,6 +18,8 @@
 		BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */; };
 		BCC7AAD61DDE0E6500FB00BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC7AAD41DDE0E6500FB00BD /* Main.storyboard */; };
 		BCC7AAD81DDE3FC300FB00BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */; };
+		BCCE36D21DF1E95200BC02B8 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE36D11DF1E95200BC02B8 /* CollapsibleTableViewHeader.swift */; };
+		BCCE36D41DF1E97100BC02B8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE36D31DF1E97100BC02B8 /* extensions.swift */; };
 		BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C21DD103C7005965D8 /* Recipe.swift */; };
 		BCD255C71DD1046C005965D8 /* RecipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C61DD1046C005965D8 /* RecipeParser.swift */; };
 		BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD255C81DD105BB005965D8 /* RecipeClient.swift */; };
@@ -31,6 +33,7 @@
 		BCE97EFD1DD0FCE1003F5F32 /* SwiftBitesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97EFC1DD0FCE1003F5F32 /* SwiftBitesUITests.swift */; };
 		BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */; };
 		BCE97F0D1DD100F2003F5F32 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */; };
+		BCF965471DF269580004D65E /* ingredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF965451DF269580004D65E /* ingredientCell.swift */; };
 		BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */; };
 		BCFAD92C1DD3D06300AD67D6 /* FeaturedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */; };
 		D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */; };
@@ -82,6 +85,8 @@
 		BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCC7AAD51DDE0E6500FB00BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC7AAD71DDE3FC300FB00BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BCCE36D11DF1E95200BC02B8 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		BCCE36D31DF1E97100BC02B8 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		BCD255C21DD103C7005965D8 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BCD255C61DD1046C005965D8 /* RecipeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeParser.swift; sourceTree = "<group>"; };
 		BCD255C81DD105BB005965D8 /* RecipeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeClient.swift; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		BCE97EFE1DD0FCE1003F5F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE97F0A1DD1005B003F5F32 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		BCF965451DF269580004D65E /* ingredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingredientCell.swift; sourceTree = "<group>"; };
 		BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeVideoCell.swift; sourceTree = "<group>"; };
 		BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewModel.swift; sourceTree = "<group>"; };
 		D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				BCE97F0C1DD100F2003F5F32 /* ShopViewController.swift */,
+				BCCE36D11DF1E95200BC02B8 /* CollapsibleTableViewHeader.swift */,
+				BCCE36D31DF1E97100BC02B8 /* extensions.swift */,
+				BCF965451DF269580004D65E /* ingredientCell.swift */,
 			);
 			name = ShoppingListView;
 			sourceTree = "<group>";
@@ -177,7 +186,6 @@
 		BC182FD51DEF934000D8544E /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */,
 				BCE97EDE1DD0FCE1003F5F32 /* SearchViewController.swift */,
 			);
 			name = SearchView;
@@ -259,6 +267,7 @@
 				BCD255C11DD101F2005965D8 /* Models */,
 				BCE97EE51DD0FCE1003F5F32 /* LaunchScreen.storyboard */,
 				BCE97EE31DD0FCE1003F5F32 /* Assets.xcassets */,
+				BCE97EDA1DD0FCE1003F5F32 /* AppDelegate.swift */,
 				BCE97EE81DD0FCE1003F5F32 /* Info.plist */,
 				BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */,
 			);
@@ -627,15 +636,18 @@
 				BCE97F0D1DD100F2003F5F32 /* ShopViewController.swift in Sources */,
 				BCFAD92C1DD3D06300AD67D6 /* FeaturedViewModel.swift in Sources */,
 				BCD255C71DD1046C005965D8 /* RecipeParser.swift in Sources */,
+				BCCE36D21DF1E95200BC02B8 /* CollapsibleTableViewHeader.swift in Sources */,
 				E84829741DD280D1003DF877 /* VideoParser.swift in Sources */,
 				BCB334A71DEB7EA8003FA6DB /* SavedVideo+CoreDataProperties.swift in Sources */,
 				E889E6A71DF1C4A500379C3E /* LoadMoreFooterView.swift in Sources */,
 				BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */,
+				BCCE36D41DF1E97100BC02B8 /* extensions.swift in Sources */,
 				BCD255CB1DD105CF005965D8 /* Video.swift in Sources */,
 				BCB334A91DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift in Sources */,
 				BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */,
 				BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */,
 				BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */,
+				BCF965471DF269580004D65E /* ingredientCell.swift in Sources */,
 				BCB334A61DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift in Sources */,
 				BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */,
 				BCE97EDD1DD0FCE1003F5F32 /* FeaturedViewController.swift in Sources */,

@@ -13,7 +13,8 @@ struct Recipe {
     /// title of recipe
     let name: String
     /// list of ingredients needed to make the recipe
-    let ingredients: [String]
+    var ingredients: [String:Bool]
     /// indicates whether ingredients are saved to shopping list
     let saved:Bool = false
+    var collapsed: Bool = true
 }
