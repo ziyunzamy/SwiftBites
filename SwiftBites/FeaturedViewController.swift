@@ -19,12 +19,22 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
      
      */
     @IBAction func loadMoreVideos(sender: UIButton) {
-        if viewModel.client.pageToken != nil {
-            viewModel.refresh { [unowned self] in
-                DispatchQueue.main.async {
+        let status = Reach().connectionStatus()
+        switch status {
+            case .unknown, .offline:
+                print("Not connected")
+            case .online(.wwan):
+                viewModel.refresh { [unowned self] in
+                    DispatchQueue.main.async {
                         self.collectionView?.reloadData()
+                    }
                 }
-            }
+            case .online(.wiFi):
+                viewModel.refresh { [unowned self] in
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                    }
+                }
         }
     }
     
@@ -32,12 +42,27 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Featured"
-        viewModel.refresh { [unowned self] in
-        DispatchQueue.main.async {
-                self.collectionView?.reloadData()
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            let alert = UIAlertController(title: "No Internet Connection", message: "This page is not available without a connection, but you can still browse your shopping list.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .online(.wwan):
+            viewModel.refresh { [unowned self] in
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+            }
+        case .online(.wiFi):
+            viewModel.refresh { [unowned self] in
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
             }
         }
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
