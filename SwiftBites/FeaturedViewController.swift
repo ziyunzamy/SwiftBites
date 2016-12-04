@@ -12,8 +12,14 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     
+    /**
+     
+     gets more YouTube videos once you reach the end of the first page
+     - parameter sender: button that click to load more videos
+     
+     */
     @IBAction func loadMoreVideos(sender: UIButton) {
-        if let token = viewModel.client.pageToken {
+        if viewModel.client.pageToken != nil {
             viewModel.refresh { [unowned self] in
                 DispatchQueue.main.async {
                         self.collectionView?.reloadData()
