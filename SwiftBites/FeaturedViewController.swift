@@ -23,13 +23,7 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         switch status {
             case .unknown, .offline:
                 print("Not connected")
-            case .online(.wwan):
-                viewModel.refresh { [unowned self] in
-                    DispatchQueue.main.async {
-                        self.collectionView?.reloadData()
-                    }
-                }
-            case .online(.wiFi):
+            case .online(.wwan), .online(.wiFi):
                 viewModel.refresh { [unowned self] in
                     DispatchQueue.main.async {
                         self.collectionView?.reloadData()
@@ -44,22 +38,16 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         navigationItem.title = "Featured"
         let status = Reach().connectionStatus()
         switch status {
-        case .unknown, .offline:
-            let alert = UIAlertController(title: "No Internet Connection", message: "This page is not available without a connection, but you can still browse your shopping list.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        case .online(.wwan):
-            viewModel.refresh { [unowned self] in
-                DispatchQueue.main.async {
-                    self.collectionView?.reloadData()
+            case .unknown, .offline:
+                let alert = UIAlertController(title: "No Internet Connection", message: "This page is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            case .online(.wwan), .online(.wiFi):
+                viewModel.refresh { [unowned self] in
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                    }
                 }
-            }
-        case .online(.wiFi):
-            viewModel.refresh { [unowned self] in
-                DispatchQueue.main.async {
-                    self.collectionView?.reloadData()
-                }
-            }
         }
         
     // Do any additional setup after loading the view, typically from a nib.

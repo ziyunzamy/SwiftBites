@@ -37,10 +37,17 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         let video:Video = self.videoForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
         cell.name.text = video.name
         cell.backgroundColor = UIColor.white
-        let url = NSURL(string: video.thumbnail)!
-        let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        let image = UIImage(data: data as Data)
-        cell.thumbnail.image = image
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            print("Not connected")
+            cell.thumbnail.image = UIImage(named: "img-not-avail")
+        case .online(.wwan), .online(.wiFi):
+            let url = NSURL(string: video.thumbnail)!
+            let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            let image = UIImage(data: data as Data)
+            cell.thumbnail.image = image
+        }
         return cell
     }
 

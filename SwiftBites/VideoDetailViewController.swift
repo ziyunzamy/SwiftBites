@@ -36,13 +36,19 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             shop.setImage(UIImage(named: "shopping.png"), for: UIControlState.normal)
             self.recipeSaved = true
         }
-        video.load(withVideoId: (viewModel?.videoId())!, playerVars: ["playsinline": "1", "loop": "1"])
-        videoName.text = viewModel?.name()?.uppercased()
-        viewModel?.refresh { [unowned self] in
-            DispatchQueue.main.async {
-                self.tableView?.reloadData()
-            }
+        let status = Reach().connectionStatus()
+        switch status {
+            case .unknown, .offline:
+                print("Not connected")
+            case .online(.wwan), .online(.wiFi):
+                video.load(withVideoId: (viewModel?.videoId())!, playerVars: ["playsinline": "1", "loop": "1"])
+                viewModel?.refresh { [unowned self] in
+                    DispatchQueue.main.async {
+                        self.tableView?.reloadData()
+                    }
+                }
         }
+        videoName.text = viewModel?.name()?.uppercased()
         // Do any additional setup after loading the view.
     }
 
