@@ -22,13 +22,19 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         let status = Reach().connectionStatus()
         switch status {
             case .unknown, .offline:
-                print("Not connected")
+                sender.isEnabled = false
             case .online(.wwan), .online(.wiFi):
-                viewModel.refresh { [unowned self] in
-                    DispatchQueue.main.async {
-                        self.collectionView?.reloadData()
+                if (viewModel.client.pageToken != nil) {
+                    viewModel.refresh { [unowned self] in
+                        DispatchQueue.main.async {
+                            self.collectionView?.reloadData()
+                        }
                     }
                 }
+                else {
+                    sender.isEnabled = false
+            }
+            
         }
     }
     
