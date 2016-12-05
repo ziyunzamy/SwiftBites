@@ -17,6 +17,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var videoName: UILabel!
     @IBOutlet weak var save: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var error: UILabel!
     var viewModel: VideoDetailViewModel?
     //savedVideo related properties
     var videoSaved: Bool=false
@@ -39,7 +40,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
         let status = Reach().connectionStatus()
         switch status {
             case .unknown, .offline:
-                print("Not connected")
+                error.text = "Cannot load video due to lack of internet connection."
             case .online(.wwan), .online(.wiFi):
                 video.load(withVideoId: (viewModel?.videoId())!, playerVars: ["playsinline": "1", "loop": "1"])
                 viewModel?.refresh { [unowned self] in
