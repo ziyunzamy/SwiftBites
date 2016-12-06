@@ -12,13 +12,29 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     
+    /**
+     
+     gets more YouTube videos once you reach the end of the first page
+     - parameter sender: button that click to load more videos
+     
+     */
     @IBAction func loadMoreVideos(sender: UIButton) {
-        if let token = viewModel.client.pageToken {
-            viewModel.refresh { [unowned self] in
-                DispatchQueue.main.async {
-                        self.collectionView?.reloadData()
+        let status = Reach().connectionStatus()
+        switch status {
+            case .unknown, .offline:
+                sender.isEnabled = false
+            case .online(.wwan), .online(.wiFi):
+                if (viewModel.client.pageToken != nil) {
+                    viewModel.refresh { [unowned self] in
+                        DispatchQueue.main.async {
+                            self.collectionView?.reloadData()
+                        }
+                    }
                 }
+                else {
+                    sender.isEnabled = false
             }
+            
         }
     }
     
@@ -26,12 +42,21 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Featured"
-        viewModel.refresh { [unowned self] in
-        DispatchQueue.main.async {
-                self.collectionView?.reloadData()
-            }
+        let status = Reach().connectionStatus()
+        switch status {
+            case .unknown, .offline:
+                let alert = UIAlertController(title: "No Internet Connection", message: "This page is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            case .online(.wwan), .online(.wiFi):
+                viewModel.refresh { [unowned self] in
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                    }
+                }
         }
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +104,7 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         cell.backgroundColor = UIColor.white
         let url = NSURL(string: video.thumbnail)!
         let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        var image = UIImage(data: data as Data)
+        let image = UIImage(data: data as Data)
         cell.thumbnail.image = image
         return cell
     }
