@@ -307,8 +307,18 @@
                                     <constraint firstAttribute="trailing" secondItem="vrl-4U-VgH" secondAttribute="trailing" constant="19" id="mRO-KP-vtw"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62x-Ez-ukt">
+                                <rect key="frame" x="211" y="332" width="175" height="40"/>
+                                <state key="normal" image="add-to-list"/>
+                                <connections>
+                                    <action selector="shopButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="fff-3j-kiX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-34-k3y">
-                                <rect key="frame" x="5" y="321" width="131" height="62"/>
+                                <rect key="frame" x="-9" y="321" width="131" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="cTP-eC-Ufz"/>
+                                </constraints>
                                 <state key="normal" image="save"/>
                                 <connections>
                                     <action selector="saveButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="bL7-ep-Rgm"/>
@@ -320,13 +330,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62x-Ez-ukt">
-                                <rect key="frame" x="218" y="332" width="175" height="40"/>
-                                <state key="normal" image="add-to-list"/>
-                                <connections>
-                                    <action selector="shopButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="fff-3j-kiX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -336,17 +339,19 @@
                             <constraint firstAttribute="trailing" secondItem="lLg-ju-Y8A" secondAttribute="trailing" id="DSU-NX-hFD"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leading" id="EYk-8U-C8c"/>
                             <constraint firstItem="62x-Ez-ukt" firstAttribute="top" secondItem="vrl-4U-VgH" secondAttribute="bottom" constant="9" id="FYW-ch-WKC"/>
+                            <constraint firstItem="62x-Ez-ukt" firstAttribute="leading" secondItem="wG7-34-k3y" secondAttribute="trailing" constant="89" id="IEu-Kp-QoU"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="nE0-h3-YLQ" secondAttribute="leading" id="Jp4-c0-lFC"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="trailing" secondItem="nE0-h3-YLQ" secondAttribute="trailing" id="MSN-uC-EEx"/>
+                            <constraint firstItem="ZKp-WF-FQb" firstAttribute="trailing" secondItem="Wju-vr-jjv" secondAttribute="trailing" id="Wrq-Hn-TQx"/>
                             <constraint firstItem="nE0-h3-YLQ" firstAttribute="top" secondItem="ZKp-WF-FQb" secondAttribute="bottom" constant="15" id="Yjc-dA-rBo"/>
                             <constraint firstItem="HT6-1K-XtE" firstAttribute="top" secondItem="nE0-h3-YLQ" secondAttribute="bottom" id="bbV-64-MfH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="62x-Ez-ukt" secondAttribute="trailing" constant="-12" id="bcX-lz-dmI"/>
                             <constraint firstItem="wG7-34-k3y" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="bottom" constant="8" id="bjK-FF-pVA"/>
                             <constraint firstItem="wG7-34-k3y" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leadingMargin" constant="13" id="ccl-1h-N33"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="top" secondItem="zod-yi-QjX" secondAttribute="bottom" id="e25-4b-EYG"/>
-                            <constraint firstItem="62x-Ez-ukt" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="bottom" constant="3" id="g87-A1-nMx"/>
                             <constraint firstItem="ZKp-WF-FQb" firstAttribute="top" secondItem="wG7-34-k3y" secondAttribute="bottom" constant="5" id="jVI-Rw-FBk"/>
                             <constraint firstItem="wG7-34-k3y" firstAttribute="top" secondItem="vrl-4U-VgH" secondAttribute="bottom" constant="14" id="s5N-ME-Mpy"/>
+                            <constraint firstItem="nE0-h3-YLQ" firstAttribute="top" secondItem="wG7-34-k3y" secondAttribute="bottom" constant="47" id="thA-Md-xft"/>
                             <constraint firstItem="Wju-vr-jjv" firstAttribute="top" secondItem="ZKp-WF-FQb" secondAttribute="bottom" constant="15" id="weO-Ia-sVX"/>
                         </constraints>
                     </view>
@@ -445,13 +450,13 @@
     <resources>
         <image name="add-to-list" width="127" height="32"/>
         <image name="lightbulb-small" width="30" height="30"/>
-        <image name="save" width="127" height="32"/>
+        <image name="save" width="98" height="32"/>
         <image name="saved-small" width="30" height="30"/>
         <image name="search" width="40" height="40"/>
         <image name="shopping" width="40" height="40"/>
         <image name="unchecked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BAx-hP-sAJ"/>
+        <segue reference="6N2-qd-TMk"/>
     </inferredMetricsTieBreakers>
 </document>
