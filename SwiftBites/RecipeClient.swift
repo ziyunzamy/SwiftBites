@@ -8,9 +8,15 @@
 
 import Foundation
 
+/// Handles network call for recipe
 class RecipeClient {
     let videoId: String
     
+    /**
+    
+     - parameter videoId: videoId from data that uniquely identifies the recipe.
+     
+     */
     init(videoId: String) {
         self.videoId = videoId
     }

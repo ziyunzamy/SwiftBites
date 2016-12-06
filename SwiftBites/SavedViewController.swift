@@ -29,18 +29,40 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (savedVideos?.count)!
+        if (savedVideos?.count)! > 0 {
+            savedVideosTableView?.backgroundView?.isHidden = true
+            savedVideosTableView?.separatorStyle = .singleLine
+            return (savedVideos?.count)!
+        }
+        else {
+            let messageLabel = UILabel(frame: CGRect(x: 0,y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            messageLabel.text = "No recipes saved. Add a recipe to your saved list from a recipe detail page."
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0;
+            messageLabel.textAlignment = .center;
+            messageLabel.sizeToFit();
+            savedVideosTableView?.backgroundView = messageLabel;
+            savedVideosTableView?.separatorStyle = .none;
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "savedVideoCell", for: indexPath as IndexPath) as! SavedVideoTableViewCell
-        var video:Video = self.videoForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
+        let video:Video = self.videoForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
         cell.name.text = video.name
         cell.backgroundColor = UIColor.white
-        let url = NSURL(string: video.thumbnail)!
-        let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        var image = UIImage(data: data as Data)
-        cell.thumbnail.image = image
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            print("Not connected")
+            cell.thumbnail.image = UIImage(named: "img-not-avail")
+        case .online(.wwan), .online(.wiFi):
+            let url = NSURL(string: video.thumbnail)!
+            let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            let image = UIImage(data: data as Data)
+            cell.thumbnail.image = image
+        }
         return cell
     }
 
