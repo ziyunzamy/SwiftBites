@@ -37,6 +37,7 @@
 		BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */; };
 		BCFAD92C1DD3D06300AD67D6 /* FeaturedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */; };
 		D7869EE43AE691BB3D675A3F /* Pods_SwiftBitesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */; };
+		E814F0581DF4B98900016F8E /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814F0571DF4B98900016F8E /* Reach.swift */; };
 		E84829721DD27E43003DF877 /* VideoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84829711DD27E43003DF877 /* VideoClient.swift */; };
 		E84829741DD280D1003DF877 /* VideoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84829731DD280D1003DF877 /* VideoParser.swift */; };
 		E8638AD91DE7492D0039A89A /* invalid-videos.json in Resources */ = {isa = PBXBuildFile; fileRef = E8638AD81DE7492D0039A89A /* invalid-videos.json */; };
@@ -110,6 +111,7 @@
 		BCFAD9281DD3A16700AD67D6 /* YoutubeVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeVideoCell.swift; sourceTree = "<group>"; };
 		BCFAD92B1DD3D06300AD67D6 /* FeaturedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewModel.swift; sourceTree = "<group>"; };
 		D9FC5B63E55A9B6A74662814 /* Pods_SwiftBitesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBitesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E814F0571DF4B98900016F8E /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		E84829711DD27E43003DF877 /* VideoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoClient.swift; sourceTree = "<group>"; };
 		E84829731DD280D1003DF877 /* VideoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoParser.swift; sourceTree = "<group>"; };
 		E8638AD81DE7492D0039A89A /* invalid-videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "invalid-videos.json"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				BCB334A51DEB7EA8003FA6DB /* SavedRecipe+CoreDataProperties.swift */,
 				BCD255C21DD103C7005965D8 /* Recipe.swift */,
 				BCD255CA1DD105CF005965D8 /* Video.swift */,
+				E814F0571DF4B98900016F8E /* Reach.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				BCD255C91DD105BB005965D8 /* RecipeClient.swift in Sources */,
 				BCD255C31DD103C7005965D8 /* Recipe.swift in Sources */,
 				BCFAD9291DD3A16700AD67D6 /* YoutubeVideoCell.swift in Sources */,
+				E814F0581DF4B98900016F8E /* Reach.swift in Sources */,
 				BCF965471DF269580004D65E /* ingredientCell.swift in Sources */,
 				BCB334A61DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift in Sources */,
 				BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */,
@@ -812,6 +816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KarenSegal.SwiftBites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -827,6 +832,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KarenSegal.SwiftBites;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
