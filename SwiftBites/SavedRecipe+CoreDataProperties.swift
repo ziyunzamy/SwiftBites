@@ -18,6 +18,6 @@ extension SavedRecipe {
 
     @NSManaged public var videoId: String?
     @NSManaged public var name: String?
-    @NSManaged public var ingredients: [String]?
+    @NSManaged public var ingredients: [String:Bool]?
 
 }

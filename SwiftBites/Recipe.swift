@@ -9,6 +9,7 @@
 struct Recipe {
     let videoId: String
     let name: String
-    let ingredients: [String]
+    var ingredients: [String:Bool]
     let saved:Bool = false
+    var collapsed: Bool = true
 }
