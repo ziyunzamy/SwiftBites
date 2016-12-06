@@ -18,6 +18,8 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var save: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var error: UILabel!
+    @IBOutlet weak var noIngredients: UILabel!
+    @IBOutlet weak var youtubeImage: UIImageView!
     var viewModel: VideoDetailViewModel?
     //savedVideo related properties
     var videoSaved: Bool=false
@@ -30,17 +32,19 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         //check if this video is saved
         if(videoIsSaved()){
-            save.setImage(UIImage(named: "saved-small.png"), for: UIControlState.normal)
+            save.setImage(UIImage(named: "saved"), for: UIControlState.normal)
             self.videoSaved = true
         }
         if(recipeIsSaved()){
-            shop.setImage(UIImage(named: "shopping.png"), for: UIControlState.normal)
+            shop.setImage(UIImage(named: "added"), for: UIControlState.normal)
             self.recipeSaved = true
         }
         let status = Reach().connectionStatus()
         switch status {
             case .unknown, .offline:
                 error.text = "Cannot load video due to lack of internet connection."
+                noIngredients.text = "No connection. Add recipe to shopping list to view ingredients list."
+                youtubeImage.image = UIImage(named: "youtube-error")
             case .online(.wwan), .online(.wiFi):
                 video.load(withVideoId: (viewModel?.videoId())!, playerVars: ["playsinline": "1", "loop": "1"])
                 viewModel?.refresh { [unowned self] in
@@ -122,13 +126,13 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func saveButtonOnClick(){
         if (self.videoSaved){
             deleteVideo()
-            save.setImage(UIImage(named: "saved-empty.png"), for: UIControlState.normal)
+            save.setImage(UIImage(named: "save"), for: UIControlState.normal)
             self.videoFromCoredata = nil
             self.videoSaved = false
         }
         else{
             self.saveVideo()
-            save.setImage(UIImage(named: "saved-small.png"), for: UIControlState.normal)
+            save.setImage(UIImage(named: "saved"), for: UIControlState.normal)
             self.videoSaved = true
         }
     }
@@ -166,13 +170,13 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func shopButtonOnClick(){
         if (self.recipeSaved){
             deleteRecipe()
-            shop.setImage(UIImage(named: "shopping-empty.png"), for: UIControlState.normal)
+            shop.setImage(UIImage(named: "add-to-list.png"), for: UIControlState.normal)
             self.recipeFromCoredata = nil
             self.recipeSaved = false
         }
         else{
             self.saveRecipe()
-            shop.setImage(UIImage(named: "shopping.png"), for: UIControlState.normal)
+            shop.setImage(UIImage(named: "added.png"), for: UIControlState.normal)
             self.recipeSaved = true
         }
     }

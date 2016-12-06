@@ -32,7 +32,22 @@ class ShopViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSections(in: UITableView) -> Int{
-        return self.recipes.count
+        if self.recipes.count > 0 {
+            self.tableView.backgroundView?.isHidden = true
+            self.tableView.separatorStyle = .singleLine
+            return self.recipes.count
+        }
+        else {
+            let messageLabel = UILabel(frame: CGRect(x: 0,y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            messageLabel.text = "No ingredients in shopping list. Add a recipe to your shopping list from a recipe detail page."
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0;
+            messageLabel.textAlignment = .center;
+            messageLabel.sizeToFit();
+            self.tableView.backgroundView = messageLabel;
+            self.tableView.separatorStyle = .none;
+            return 0
+        }
     }
     //cell
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

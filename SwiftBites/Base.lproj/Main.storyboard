@@ -284,47 +284,61 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-ju-Y8A" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="246"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrl-4U-VgH">
-                                        <rect key="frame" x="23" y="47" width="333" height="138"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrl-4U-VgH">
+                                        <rect key="frame" x="21" y="194" width="333" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zj6-Uq-eyO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="189" id="vjl-IB-SAX"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="zj6-Uq-eyO" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="top" id="7a5-7O-nR9"/>
+                                    <constraint firstItem="zj6-Uq-eyO" firstAttribute="centerX" secondItem="vrl-4U-VgH" secondAttribute="centerX" id="A79-zP-7RN"/>
+                                    <constraint firstItem="vrl-4U-VgH" firstAttribute="top" secondItem="zj6-Uq-eyO" secondAttribute="bottom" constant="5" id="HD2-iu-xBn"/>
+                                    <constraint firstItem="zj6-Uq-eyO" firstAttribute="leading" secondItem="lLg-ju-Y8A" secondAttribute="leading" id="PnD-ij-qRi"/>
                                     <constraint firstItem="vrl-4U-VgH" firstAttribute="leading" secondItem="lLg-ju-Y8A" secondAttribute="leadingMargin" id="bck-XV-O1C"/>
                                     <constraint firstAttribute="trailing" secondItem="vrl-4U-VgH" secondAttribute="trailing" constant="19" id="mRO-KP-vtw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62x-Ez-ukt">
-                                <rect key="frame" x="311" y="332" width="60" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="LbY-cA-zob"/>
-                                </constraints>
-                                <state key="normal" title="shop" image="shopping-empty"/>
-                                <connections>
-                                    <action selector="shopButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="fff-3j-kiX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-34-k3y">
-                                <rect key="frame" x="29" y="337" width="67" height="30"/>
-                                <state key="normal" title="save" image="saved-empty"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-34-k3y">
+                                <rect key="frame" x="5" y="321" width="131" height="62"/>
+                                <state key="normal" image="save"/>
                                 <connections>
                                     <action selector="saveButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="bL7-ep-Rgm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wju-vr-jjv">
+                                <rect key="frame" x="16" y="452" width="343" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62x-Ez-ukt">
+                                <rect key="frame" x="218" y="332" width="175" height="40"/>
+                                <state key="normal" image="add-to-list"/>
+                                <connections>
+                                    <action selector="shopButtonOnClick" destination="lyi-fr-0Eg" eventType="touchUpInside" id="fff-3j-kiX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZKp-WF-FQb" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leadingMargin" id="1HP-4F-mHQ"/>
+                            <constraint firstItem="Wju-vr-jjv" firstAttribute="leading" secondItem="nE0-h3-YLQ" secondAttribute="trailing" constant="-359" id="2Mf-gj-Cos"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZKp-WF-FQb" secondAttribute="trailing" id="7Bq-vp-n19"/>
                             <constraint firstAttribute="trailing" secondItem="lLg-ju-Y8A" secondAttribute="trailing" id="DSU-NX-hFD"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="O63-FO-RBZ" secondAttribute="leading" id="EYk-8U-C8c"/>
+                            <constraint firstItem="62x-Ez-ukt" firstAttribute="top" secondItem="vrl-4U-VgH" secondAttribute="bottom" constant="9" id="FYW-ch-WKC"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="leading" secondItem="nE0-h3-YLQ" secondAttribute="leading" id="Jp4-c0-lFC"/>
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="trailing" secondItem="nE0-h3-YLQ" secondAttribute="trailing" id="MSN-uC-EEx"/>
                             <constraint firstItem="nE0-h3-YLQ" firstAttribute="top" secondItem="ZKp-WF-FQb" secondAttribute="bottom" constant="15" id="Yjc-dA-rBo"/>
-                            <constraint firstItem="vrl-4U-VgH" firstAttribute="top" secondItem="zod-yi-QjX" secondAttribute="bottom" constant="47" id="Ymr-bq-wT1"/>
                             <constraint firstItem="HT6-1K-XtE" firstAttribute="top" secondItem="nE0-h3-YLQ" secondAttribute="bottom" id="bbV-64-MfH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="62x-Ez-ukt" secondAttribute="trailing" constant="-12" id="bcX-lz-dmI"/>
                             <constraint firstItem="wG7-34-k3y" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="bottom" constant="8" id="bjK-FF-pVA"/>
@@ -332,20 +346,24 @@
                             <constraint firstItem="lLg-ju-Y8A" firstAttribute="top" secondItem="zod-yi-QjX" secondAttribute="bottom" id="e25-4b-EYG"/>
                             <constraint firstItem="62x-Ez-ukt" firstAttribute="top" secondItem="lLg-ju-Y8A" secondAttribute="bottom" constant="3" id="g87-A1-nMx"/>
                             <constraint firstItem="ZKp-WF-FQb" firstAttribute="top" secondItem="wG7-34-k3y" secondAttribute="bottom" constant="5" id="jVI-Rw-FBk"/>
+                            <constraint firstItem="wG7-34-k3y" firstAttribute="top" secondItem="vrl-4U-VgH" secondAttribute="bottom" constant="14" id="s5N-ME-Mpy"/>
+                            <constraint firstItem="Wju-vr-jjv" firstAttribute="top" secondItem="ZKp-WF-FQb" secondAttribute="bottom" constant="15" id="weO-Ia-sVX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="error" destination="vrl-4U-VgH" id="Zbh-WO-rzo"/>
+                        <outlet property="noIngredients" destination="Wju-vr-jjv" id="KWS-A9-V5q"/>
                         <outlet property="save" destination="wG7-34-k3y" id="X1K-sG-5VY"/>
                         <outlet property="shop" destination="62x-Ez-ukt" id="NSr-qf-wst"/>
                         <outlet property="tableView" destination="nE0-h3-YLQ" id="p8e-Ud-bnL"/>
                         <outlet property="video" destination="lLg-ju-Y8A" id="A2m-80-QlR"/>
                         <outlet property="videoName" destination="ZKp-WF-FQb" id="VFD-zc-4hv"/>
+                        <outlet property="youtubeImage" destination="zj6-Uq-eyO" id="Rqj-OR-9DV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2z0-7e-s3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2781.5999999999999" y="-49.025487256371818"/>
+            <point key="canvasLocation" x="2780" y="-49.925037481259373"/>
         </scene>
         <!--Suggested-->
         <scene sceneID="TvE-nA-3We">
@@ -425,15 +443,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-to-list" width="127" height="32"/>
         <image name="lightbulb-small" width="30" height="30"/>
-        <image name="saved-empty" width="30" height="30"/>
+        <image name="save" width="127" height="32"/>
         <image name="saved-small" width="30" height="30"/>
         <image name="search" width="40" height="40"/>
         <image name="shopping" width="40" height="40"/>
-        <image name="shopping-empty" width="40" height="40"/>
         <image name="unchecked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6N2-qd-TMk"/>
+        <segue reference="BAx-hP-sAJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,22 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (savedVideos?.count)!
+        if (savedVideos?.count)! > 0 {
+            savedVideosTableView?.backgroundView?.isHidden = true
+            savedVideosTableView?.separatorStyle = .singleLine
+            return (savedVideos?.count)!
+        }
+        else {
+            let messageLabel = UILabel(frame: CGRect(x: 0,y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            messageLabel.text = "No recipes saved. Add a recipe to your saved list from a recipe detail page."
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0;
+            messageLabel.textAlignment = .center;
+            messageLabel.sizeToFit();
+            savedVideosTableView?.backgroundView = messageLabel;
+            savedVideosTableView?.separatorStyle = .none;
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
