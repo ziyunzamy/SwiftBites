@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import SwiftyJSON
 import youtube_ios_player_helper
-class VideoDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+import MessageUI
+class VideoDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,MFMailComposeViewControllerDelegate{
     @IBOutlet weak var back: UIButton!
 
     @IBOutlet weak var video: YTPlayerView!
@@ -135,6 +136,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             save.setImage(UIImage(named: "saved"), for: UIControlState.normal)
             self.videoSaved = true
         }
+        sendEmailButtonTapped(sender: self)
     }
     func deleteVideo(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -210,5 +212,42 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             fatalError("Failure to save context: \(error)")
         }
     }
+    //MARK email feature
+    func sendEmailButtonTapped(sender: AnyObject) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
     
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        if let name = viewModel?.name(),
+                let id = viewModel?.videoId(){
+            print(id)
+            mailComposerVC.setSubject("Recipe for \(name)")
+            mailComposerVC.setMessageBody("<h4>Hey, just want you to checkout this awesome Tasty Video <a href='https://www.youtube.com/watch?v=\(id)'>\(name)</a>. Let's make sure we have all these ingredients so that we can cook it later!</h4>\(self.buildEmailBody())", isHTML: true)
+        }
+        
+        return mailComposerVC
+    }
+    func buildEmailBody() -> String {
+        var result = "<ul>"
+        print(viewModel?.getIngredients())
+        for obj in (viewModel?.getIngredients())!{
+            result.append("<li>\(obj.key)</li>")
+        }
+        result.append("</ul>")
+        return result
+    }
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

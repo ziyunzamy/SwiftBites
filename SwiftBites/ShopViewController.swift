@@ -92,29 +92,7 @@ class ShopViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-    
-    
-//    func saveVideo() {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        // create an instance of our managedObjectContext
-//        let moc = appDelegate.managedObjectContext
-//        
-//        // we set up our entity by selecting the entity and context that we're targeting
-//        let entity = NSEntityDescription.insertNewObject(forEntityName: "SavedVideo", into: moc) as! SavedVideo
-//        
-//        // add our data
-//        entity.setValue(viewModel?.videoId(), forKey: "videoId")
-//        entity.setValue(viewModel?.name(), forKey: "name")
-//        entity.setValue(viewModel?.thumbnail(), forKey: "thumbnail")
-//        self.videoFromCoredata = entity
-//        
-//        // we save our entity
-//        do {
-//            try moc.save()
-//        } catch {
-//            fatalError("Failure to save context: \(error)")
-//        }
-//    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
