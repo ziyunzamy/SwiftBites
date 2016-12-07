@@ -311,6 +311,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJn-Xs-PgD">
                                                         <rect key="frame" x="121" y="0.0" width="98" height="72"/>
                                                         <state key="normal" image="email"/>
+                                                        <connections>
+                                                            <action selector="sendEmailButtonTapped" destination="lyi-fr-0Eg" eventType="touchUpInside" id="BhM-Fl-JIi"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62x-Ez-ukt">
                                                         <rect key="frame" x="242" y="0.0" width="127" height="72"/>
@@ -480,6 +483,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="email" destination="SJn-Xs-PgD" id="G5v-uc-kJa"/>
                         <outlet property="error" destination="vrl-4U-VgH" id="Zbh-WO-rzo"/>
                         <outlet property="noIngredients" destination="Wju-vr-jjv" id="KWS-A9-V5q"/>
                         <outlet property="save" destination="wG7-34-k3y" id="X1K-sG-5VY"/>
