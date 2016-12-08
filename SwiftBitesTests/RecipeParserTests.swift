@@ -20,7 +20,7 @@ class RecipeParserTests: XCTestCase {
         XCTAssertNotNil(recipe)
         XCTAssertEqual(recipe?.videoId, "piRCiB2Zm-Y")
         XCTAssertEqual(recipe?.name, "Creamy Spinach-Stuffed Mushrooms")
-        XCTAssertEqual((recipe?.ingredients)!, ["20 medium-sized mushrooms", "1 tablespoon butter", "2 cloves garlic, minced", "4 cups fresh spinach","8 ounces cream cheese","Salt","Pepper","¼ cup bread crumbs","¼ cup parmesan"])
+        XCTAssertEqual((recipe?.ingredients)!, ["20 medium-sized mushrooms":false, "1 tablespoon butter":false, "2 cloves garlic, minced":false, "4 cups fresh spinach":false,"8 ounces cream cheese":false,"Salt":false,"Pepper":false,"¼ cup bread crumbs":false,"¼ cup parmesan":false])
     }
     
     func test_parseVideos_withInvalidIngredients() {
@@ -29,7 +29,7 @@ class RecipeParserTests: XCTestCase {
         XCTAssertNotNil(recipe)
         XCTAssertEqual(recipe?.videoId, "KLGSLCaksdY")
         XCTAssertEqual(recipe?.name, "How To Cook With Cast Iron")
-        XCTAssertEqual((recipe?.ingredients)!, ["No ingredients available for this recipe."])
+        XCTAssertEqual((recipe?.ingredients)!, ["No ingredients available for this recipe.":false])
     }
     
     func test_parseVideos_withInvalidRecipe() {
