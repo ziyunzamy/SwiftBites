@@ -118,16 +118,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-rn-eRo">
-                                            <rect key="frame" x="9" y="6" width="340" height="60"/>
+                                            <rect key="frame" x="9" y="6" width="340" height="59"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-o0-8Vv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="59.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLm-F1-qEa">
-                                                    <rect key="frame" x="300" y="0.0" width="40" height="59.5"/>
+                                                    <rect key="frame" x="300" y="0.0" width="40" height="59"/>
                                                     <state key="normal" image="unchecked"/>
                                                 </button>
                                             </subviews>
@@ -595,6 +595,6 @@
         <image name="unchecked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BAx-hP-sAJ"/>
+        <segue reference="6N2-qd-TMk"/>
     </inferredMetricsTieBreakers>
 </document>
