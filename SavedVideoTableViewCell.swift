@@ -13,6 +13,8 @@ class SavedVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        name.font = UIFont (name: "Avenir", size: 17)
         // Initialization code
     }
 

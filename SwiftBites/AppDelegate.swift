@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window?.tintColor = themeColor
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-black", size: 17)!]
+        let titleFont : UIFont = UIFont(name: "Avenir", size: 12)!
+        let attributesNormal = [
+            NSFontAttributeName : titleFont
+        ]
+        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
         return true
     }
 

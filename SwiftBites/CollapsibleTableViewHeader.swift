@@ -34,6 +34,7 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont (name: "Avenir", size: 17)
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(arrowLabel)

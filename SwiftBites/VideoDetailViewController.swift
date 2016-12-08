@@ -34,6 +34,8 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         //check if this video is saved
+        videoName.font = UIFont (name: "Avenir-heavy", size: 17)
+        noIngredients.font = UIFont (name: "Avenir", size: 17)
         if(videoIsSaved()){
             save.setImage(UIImage(named: "saved"), for: UIControlState.normal)
             self.videoSaved = true
@@ -72,6 +74,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
         cell.textLabel?.text = viewModel?.titleForRowAtIndexPath(indexPath: indexPath as NSIndexPath)
+        cell.textLabel?.font = UIFont (name: "Avenir", size: 17)
         return cell
     }
 
