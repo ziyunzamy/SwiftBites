@@ -12,7 +12,7 @@ import Foundation
 class VideoClient {
     /// Optional pageToken that can be passed into channel url
     var pageToken:String?
-    
+    var searchTerm:String?
     /**
      
      Fetches videos from Tasty Channel using [YouTube Search API](https://developers.google.com/youtube/v3/docs/search) .
@@ -25,6 +25,9 @@ class VideoClient {
         var channelUrlString = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAbJzDWQo7GXNqBh89ZpqIf88Dc03wfdZM&channelId=UCJFp8uSYCjXOMnkUyb3CQ3Q&part=snippet,id&order=date&maxResults=50"
         if let pageToken = self.pageToken {
             channelUrlString += "&pageToken=" + pageToken
+        }
+        if let searchTerm = self.searchTerm {
+            channelUrlString += "&q=" + searchTerm
         }
         
         guard let channelURL = NSURL(string: channelUrlString) else {
