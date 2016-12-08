@@ -17,8 +17,6 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationItem.title = "Saved Recipes"
         savedVideos = fetchVideo()
         self.savedVideosTableView?.reloadData()
-
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         savedVideos = fetchVideo()
@@ -28,7 +26,11 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /*
+         check if there is any saved videos in coredata
+         */
         if (savedVideos?.count)! > 0 {
             savedVideosTableView?.backgroundView?.isHidden = true
             savedVideosTableView?.separatorStyle = .singleLine
@@ -54,6 +56,9 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.backgroundColor = UIColor.white
         let status = Reach().connectionStatus()
         switch status {
+            /*
+             Load saved videos from coredata
+             */
         case .unknown, .offline:
             print("Not connected")
             cell.thumbnail.image = UIImage(named: "img-not-avail")
@@ -64,24 +69,6 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
             cell.thumbnail.image = image
         }
         return cell
-    }
-
-
-    /*
-     coredata fetch the saved videos
-    */
-    func fetchVideo() -> [SavedVideo]?{
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        // create an instance of our managedObjectContext
-        let moc = appDelegate.managedObjectContext
-        let request: NSFetchRequest<NSFetchRequestResult> = SavedVideo.fetchRequest()
-        
-        do {
-            let request = try moc.fetch(request) as! [SavedVideo]
-            return request
-        } catch {
-            fatalError("Failed to fetch person: \(error)")
-        }
     }
     func videoForRowAtIndexPath(indexPath: NSIndexPath) -> Video {
         let index = indexPath.row
@@ -101,14 +88,38 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         return result
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailFromSaved"{
-            if let detailVC = segue.destination as? VideoDetailViewController,
-                let cell = sender as? UITableViewCell,
-                let indexPath = savedVideosTableView.indexPath(for: cell) {
-                detailVC.viewModel =  self.detailViewModelForSectionAtIndexPath(indexPath: indexPath as NSIndexPath)
-                detailVC.navigationItem.title = "Recipe Detail"
-                navigationItem.backBarButtonItem?.title = "back"
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            let alert = UIAlertController(title: "No Internet Connection", message: "Recipe detail is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .online(.wwan), .online(.wiFi):
+            if segue.identifier == "showDetailFromSaved"{
+                if let detailVC = segue.destination as? VideoDetailViewController,
+                    let cell = sender as? UITableViewCell,
+                    let indexPath = savedVideosTableView.indexPath(for: cell) {
+                    detailVC.viewModel =  self.detailViewModelForSectionAtIndexPath(indexPath: indexPath as NSIndexPath)
+                    detailVC.navigationItem.title = "Recipe Detail"
+                    navigationItem.backBarButtonItem?.title = "back"
+                }
             }
+        }
+    }
+    /*
+     coredata fetch the saved videos
+     */
+    func fetchVideo() -> [SavedVideo]?{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // create an instance of our managedObjectContext
+        let moc = appDelegate.managedObjectContext
+        let request: NSFetchRequest<NSFetchRequestResult> = SavedVideo.fetchRequest()
+        
+        do {
+            let request = try moc.fetch(request) as! [SavedVideo]
+            return request
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
         }
     }
 
