@@ -101,13 +101,21 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         return result
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailFromSaved"{
-            if let detailVC = segue.destination as? VideoDetailViewController,
-                let cell = sender as? UITableViewCell,
-                let indexPath = savedVideosTableView.indexPath(for: cell) {
-                detailVC.viewModel =  self.detailViewModelForSectionAtIndexPath(indexPath: indexPath as NSIndexPath)
-                detailVC.navigationItem.title = "Recipe Detail"
-                navigationItem.backBarButtonItem?.title = "back"
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            let alert = UIAlertController(title: "No Internet Connection", message: "Recipe detail is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .online(.wwan), .online(.wiFi):
+            if segue.identifier == "showDetailFromSaved"{
+                if let detailVC = segue.destination as? VideoDetailViewController,
+                    let cell = sender as? UITableViewCell,
+                    let indexPath = savedVideosTableView.indexPath(for: cell) {
+                    detailVC.viewModel =  self.detailViewModelForSectionAtIndexPath(indexPath: indexPath as NSIndexPath)
+                    detailVC.navigationItem.title = "Recipe Detail"
+                    navigationItem.backBarButtonItem?.title = "back"
+                }
             }
         }
     }
