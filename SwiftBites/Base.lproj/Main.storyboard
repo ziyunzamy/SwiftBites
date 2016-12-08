@@ -527,7 +527,7 @@
         <scene sceneID="TvE-nA-3We">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pnw-4e-itB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Featured" image="lightbulb-small" id="J2W-Zd-Dj5"/>
+                    <tabBarItem key="tabBarItem" title="Featured" image="star" id="J2W-Zd-Dj5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p3O-6n-qqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -603,11 +603,11 @@
     <resources>
         <image name="add-to-list" width="127" height="32"/>
         <image name="email" width="98" height="32"/>
-        <image name="lightbulb-small" width="30" height="30"/>
         <image name="save" width="98" height="32"/>
         <image name="saved-small" width="30" height="30"/>
         <image name="search" width="40" height="40"/>
         <image name="shopping" width="40" height="40"/>
+        <image name="star" width="30" height="30"/>
         <image name="unchecked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
