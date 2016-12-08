@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A6F490B265BBF398137C7802 /* Pods_SwiftBitesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE47F8F0D3772B6B19B8E84 /* Pods_SwiftBitesTests.framework */; };
 		BC182FD31DEF90B300D8544E /* SavedVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC182FD21DEF90B300D8544E /* SavedVideoTableViewCell.swift */; };
+		BC41EDD21DF9D9AA00725E4C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41EDD11DF9D9AA00725E4C /* SearchViewModel.swift */; };
 		BC55168C1DDA2C1A0078D731 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55168B1DDA2C190078D731 /* VideoDetailViewController.swift */; };
 		BC55168E1DDA2C2B0078D731 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55168D1DDA2C2B0078D731 /* VideoDetailViewModel.swift */; };
 		BCB3349F1DEB78B3003FA6DB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCB3349D1DEB78B3003FA6DB /* DataModel.xcdatamodeld */; };
@@ -77,6 +78,7 @@
 		9E1CE95A706CC9CE37B90475 /* Pods-SwiftBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBites.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBites/Pods-SwiftBites.release.xcconfig"; sourceTree = "<group>"; };
 		AE6F7DC2E79881B752C84798 /* Pods-SwiftBitesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBitesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBitesUITests/Pods-SwiftBitesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC182FD21DEF90B300D8544E /* SavedVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedVideoTableViewCell.swift; path = ../SavedVideoTableViewCell.swift; sourceTree = "<group>"; };
+		BC41EDD11DF9D9AA00725E4C /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		BC55168B1DDA2C190078D731 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		BC55168D1DDA2C2B0078D731 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 		BCB3349E1DEB78B3003FA6DB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE97EDE1DD0FCE1003F5F32 /* SearchViewController.swift */,
+				BC41EDD11DF9D9AA00725E4C /* SearchViewModel.swift */,
 			);
 			name = SearchView;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				E814F0581DF4B98900016F8E /* Reach.swift in Sources */,
 				BCF965471DF269580004D65E /* ingredientCell.swift in Sources */,
 				BCB334A61DEB7EA8003FA6DB /* SavedVideo+CoreDataClass.swift in Sources */,
+				BC41EDD21DF9D9AA00725E4C /* SearchViewModel.swift in Sources */,
 				BCE97F0B1DD1005B003F5F32 /* SavedViewController.swift in Sources */,
 				BCE97EDD1DD0FCE1003F5F32 /* FeaturedViewController.swift in Sources */,
 			);

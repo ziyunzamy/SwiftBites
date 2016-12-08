@@ -1,13 +1,13 @@
 //
-//  FeaturedViewModel.swift
+//  SearchViewModel.swift
 //  SwiftBites
 //
-//  Created by Ziyun Zheng on 11/9/16.
+//  Created by Ziyun Zheng on 12/8/16.
 //  Copyright © 2016 Ziyun Zheng. All rights reserved.
 //
 
 import Foundation
-class FeaturedViewModel{
+class SearchViewModel{
     var videos = [Video]()
     let client = VideoClient()
     let parser = VideoParser()
@@ -30,9 +30,9 @@ class FeaturedViewModel{
     }
     
     func refresh(completion: @escaping () -> Void) {
-        self.client.searchTerm = self.searchTerm
         client.fetchVideo { [unowned self] data in
             self.videos += self.parser.parseVideos(data: data!)
+            self.client.searchTerm = self.searchTerm
             self.client.pageToken = self.parser.parseNextPageToken(data: data!)
             completion()
         }
