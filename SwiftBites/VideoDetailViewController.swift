@@ -21,6 +21,8 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var noIngredients: UILabel!
     @IBOutlet weak var youtubeImage: UIImageView!
+    @IBOutlet weak var email: UIButton!
+    
     var viewModel: VideoDetailViewModel?
     //savedVideo related properties
     var videoSaved: Bool=false
@@ -136,7 +138,6 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
             save.setImage(UIImage(named: "saved"), for: UIControlState.normal)
             self.videoSaved = true
         }
-        sendEmailButtonTapped(sender: self)
     }
     func deleteVideo(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -213,7 +214,7 @@ class VideoDetailViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     //MARK email feature
-    func sendEmailButtonTapped(sender: AnyObject) {
+    @IBAction func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
