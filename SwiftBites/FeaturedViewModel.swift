@@ -11,6 +11,7 @@ class FeaturedViewModel{
     var videos = [Video]()
     let client = VideoClient()
     let parser = VideoParser()
+    var searchTerm:String?
     func numberOfSection() -> Int {
         return videos.count
     }
@@ -29,6 +30,7 @@ class FeaturedViewModel{
     }
     
     func refresh(completion: @escaping () -> Void) {
+        self.client.searchTerm = self.searchTerm
         client.fetchVideo { [unowned self] data in
             self.videos += self.parser.parseVideos(data: data!)
             self.client.pageToken = self.parser.parseNextPageToken(data: data!)

@@ -7,10 +7,11 @@
 //
 
 import Foundation
-class SeachViewModel{
+class SearchViewModel{
     var videos = [Video]()
     let client = VideoClient()
     let parser = VideoParser()
+    var searchTerm:String?
     func numberOfSection() -> Int {
         return videos.count
     }
@@ -31,6 +32,7 @@ class SeachViewModel{
     func refresh(completion: @escaping () -> Void) {
         client.fetchVideo { [unowned self] data in
             self.videos += self.parser.parseVideos(data: data!)
+            self.client.searchTerm = self.searchTerm
             self.client.pageToken = self.parser.parseNextPageToken(data: data!)
             completion()
         }

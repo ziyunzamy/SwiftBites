@@ -11,7 +11,10 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let reuseIdentifier = "YoutubeVideoCell"
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
-    
+    /**
+     identify if this controller is used for search
+     */
+    var isSearch:Bool?
     /**
      
      gets more YouTube videos once you reach the end of the first page
@@ -38,10 +41,18 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         }
     }
     
-    let viewModel = FeaturedViewModel()
+    var viewModel = FeaturedViewModel()
     override func viewDidLoad() {
+        /**
+         do not reset the title if the controller is used for search
+         */
         super.viewDidLoad()
-        navigationItem.title = "Featured"
+        if let setTitle = self.isSearch {
+            //do not need to set the navigationItem title becasue it is passed in from segue
+        }
+        else{
+            navigationItem.title = "Featured"
+        }
         let status = Reach().connectionStatus()
         switch status {
             case .unknown, .offline:

@@ -29,7 +29,6 @@ class VideoClient {
         if let searchTerm = self.searchTerm {
             channelUrlString += "&q=" + searchTerm
         }
-        
         guard let channelURL = NSURL(string: channelUrlString) else {
             print("Error: couldn't create URL from string")
             completion(nil)
