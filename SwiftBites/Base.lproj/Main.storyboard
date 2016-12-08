@@ -9,25 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
-        <scene sceneID="X44-9l-xXg">
-            <objects>
-                <viewController id="fLH-5N-XOz" customClass="SearchViewController" customModule="SwiftBites" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="57P-dB-bEs"/>
-                        <viewControllerLayoutGuide type="bottom" id="KbU-BI-b33"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qfO-uA-JDA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vHp-J7-xj8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6n0-2t-uKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="898.2008995502249"/>
-        </scene>
         <!--Saved View Controller-->
         <scene sceneID="Yl5-Ap-lKq">
             <objects>
@@ -185,7 +166,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Pnw-4e-itB" kind="relationship" relationship="viewControllers" id="HUG-tC-Nk1"/>
-                        <segue destination="3OM-xB-vJZ" kind="relationship" relationship="viewControllers" id="VxS-Qf-Djc"/>
                         <segue destination="jWG-Go-2hj" kind="relationship" relationship="viewControllers" id="LfF-bC-5B3"/>
                         <segue destination="Nsj-cy-02M" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
@@ -580,32 +560,12 @@
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="1058.3208395802101"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="vQ1-nK-Kzr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3OM-xB-vJZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="search" id="aGz-Bt-GXs"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5F4-cm-3Tj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fLH-5N-XOz" kind="relationship" relationship="rootViewController" id="OcF-Uc-iic"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AG4-b2-Inp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-898.39999999999998" y="898.2008995502249"/>
-        </scene>
     </scenes>
     <resources>
         <image name="add-to-list" width="127" height="32"/>
         <image name="email" width="98" height="32"/>
         <image name="save" width="98" height="32"/>
         <image name="saved-small" width="30" height="30"/>
-        <image name="search" width="40" height="40"/>
         <image name="shopping" width="40" height="40"/>
         <image name="star" width="30" height="30"/>
         <image name="unchecked" width="40" height="40"/>
