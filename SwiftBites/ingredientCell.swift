@@ -14,6 +14,7 @@ class ingredientCell: UITableViewCell {
     @IBOutlet weak var ingredient: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        ingredient.font = UIFont (name: "Avenir", size: 17)
         // Initialization code
     }
 
