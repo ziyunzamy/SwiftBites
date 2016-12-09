@@ -222,7 +222,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEy-Nu-nSa">
                                     <rect key="frame" x="123" y="12" width="110" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                     <state key="normal" title="Load More"/>
                                     <connections>
                                         <action selector="loadMoreVideosWithSender:" destination="tb3-8Z-uic" eventType="touchUpInside" id="TD6-Od-byr"/>
@@ -643,7 +643,7 @@
         <image name="unchecked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6N2-qd-TMk"/>
         <segue reference="Tpp-BD-Lwu"/>
+        <segue reference="BAx-hP-sAJ"/>
     </inferredMetricsTieBreakers>
 </document>

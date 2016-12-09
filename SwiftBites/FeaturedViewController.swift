@@ -114,9 +114,14 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         let video = videoForIndexPath(indexPath: indexPath as IndexPath)
         cell.backgroundColor = UIColor.white
         let url = NSURL(string: video.thumbnail)!
-        let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        let image = UIImage(data: data as Data)
-        cell.thumbnail.image = image
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            cell.thumbnail.image = UIImage(named: "img-not-avail")
+        case .online(.wwan), .online(.wiFi):
+            let data = NSData(contentsOf: url as URL)! //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            cell.thumbnail.image = UIImage(data: data as Data)
+        }
         return cell
     }
     //code for modifying the view from https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started
