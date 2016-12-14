@@ -18,8 +18,6 @@ class ShopViewController: UITableViewController {
         savedRecipes = fetchRecipe()!
         recipes = savedRecipeToRecipe()
         self.tableView.reloadData()
-
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         savedRecipes = fetchRecipe()!
@@ -29,8 +27,10 @@ class ShopViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    /**
+     number of sections represent the number saved shopping list recipes
+     */
     override func numberOfSections(in: UITableView) -> Int{
         if self.recipes.count > 0 {
             self.tableView.backgroundView?.isHidden = true
@@ -71,17 +71,18 @@ class ShopViewController: UITableViewController {
         return recipes[indexPath.section].collapsed ? 0 : 44.0
     }
 
-    // Header
+    /**
+     MARK: build the header of each section, as in each saved recipe
+     */
    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ?? CollapsibleTableViewHeader(reuseIdentifier: "header")
-        
+        //set title to the name of the recipe
         header.titleLabel.text = recipes[section].name
+        //set the arrow to identify the collapse/uncollapse status
         header.arrowLabel.text = ">"
         header.setCollapsed(collapsed: recipes[section].collapsed)
-        
         header.section = section
         header.delegate = self
-        
         return header
     }
     
@@ -92,23 +93,31 @@ class ShopViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
+        //section identifies which recipe
         let section = indexPath.section
+        //row identifies which ingredient in the selected recipe
         let index = indexPath.row
+        //ingredient is a NSDictionary with for mat of String:Bool
+        //  with String represent each ingredient and Bool represent if it is checked or not
         let ingredients = recipes[section].ingredients
+        // keys represent all the ingredident strings
         let keys = [String](ingredients.keys)
         let cell = tableView.cellForRow(at: indexPath) as! ingredientCell
         let checked = ingredients[keys[index]]!
         let request: NSFetchRequest<NSFetchRequestResult> = SavedRecipe.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", recipes[section].name)
+        //fetch the recipe list to show the check/uncheck state for each ingredient
         do {
             let request = try moc.fetch(request) as! [SavedRecipe]
             let managedObject = request[0]
             if(checked){
+                //toggle to uncheck
                 cell.setUnchecked()
+                //save the changes to CoreData
                 recipes[section].ingredients[keys[index]] = !checked
                 savedRecipes[section].ingredients?[keys[index]] = !checked
                 managedObject.setValue(savedRecipes[section].ingredients,forKey:"ingredients")                
@@ -120,7 +129,9 @@ class ShopViewController: UITableViewController {
                 
             }
             else{
+                //toggle to checked
                 cell.setChecked()
+                //save the changes to CoreData
                 recipes[section].ingredients[keys[index]] = !checked
                 savedRecipes[section].ingredients?[keys[index]] = !checked
                 managedObject.setValue(savedRecipes[section].ingredients,forKey:"ingredients")
@@ -154,7 +165,7 @@ class ShopViewController: UITableViewController {
         }
     }
     /*
-    // MARK: - Coredata
+    // MARK: - Coredata-fetch SavedRecipes from CoreData
     */
     func fetchRecipe()-> [SavedRecipe]? {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -169,6 +180,9 @@ class ShopViewController: UITableViewController {
             fatalError("Failed to fetch person: \(error)")
         }
     }
+    /*
+     // MARK: - Turn NSManagedObject to normal struct
+     */
     func savedRecipeToRecipe() -> [Recipe] {
         var result:[Recipe] = []
         for object in self.savedRecipes{

@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/*
+ MARK: customized UICollectionViewCell for videothumbnails
+ */
 class YoutubeVideoCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnail: UIImageView!

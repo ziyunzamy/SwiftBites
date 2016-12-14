@@ -28,7 +28,7 @@ class FeaturedViewModel{
         let result = VideoDetailViewModel(video:self.videos[indexPath.row])
         return result
     }
-    
+    //load videos, pass in pageToken if user click loadmore
     func refresh(completion: @escaping () -> Void) {
         self.client.searchTerm = self.searchTerm
         client.fetchVideo { [unowned self] data in

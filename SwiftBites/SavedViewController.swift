@@ -15,6 +15,7 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Saved Recipes"
+        //fetch saved videos from coredata
         savedVideos = fetchVideo()
         self.savedVideosTableView?.reloadData()
     }
@@ -89,6 +90,9 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let status = Reach().connectionStatus()
+        /*
+         check if there is internet connection
+         */
         switch status {
         case .unknown, .offline:
             let alert = UIAlertController(title: "No Internet Connection", message: "Recipe detail is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
@@ -107,7 +111,7 @@ class SavedViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     /*
-     coredata fetch the saved videos
+    MARK: method for fetching the saved videos from core data
      */
     func fetchVideo() -> [SavedVideo]?{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

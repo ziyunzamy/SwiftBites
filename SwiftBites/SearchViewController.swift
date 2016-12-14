@@ -31,7 +31,9 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         input.resignFirstResponder()
         return true
     }
-
+    /*
+     // MARK: - pass the data to the FeaturedViewController in order to reuse the collectionView
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "search"{
             if let searchCollection = segue.destination as? FeaturedViewController{

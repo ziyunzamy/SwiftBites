@@ -22,7 +22,9 @@ extension UIColor {
 }
 
 extension UIView {
-    
+    /*
+     // MARK: - Rotate the arrow to identify collapse statue
+     */
     func rotate(toValue: CGFloat, duration: CFTimeInterval = 0.2) {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         

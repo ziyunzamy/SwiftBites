@@ -14,7 +14,9 @@ import UIKit
 protocol CollapsibleTableViewHeaderDelegate {
     func toggleSection(header: CollapsibleTableViewHeader, section: Int)
 }
-
+/*
+ MARK: customized UITableViewHeader to enable the collapsable table view feature
+ */
 class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     var delegate: CollapsibleTableViewHeaderDelegate?

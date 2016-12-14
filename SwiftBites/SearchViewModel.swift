@@ -28,7 +28,7 @@ class SearchViewModel{
         let result = VideoDetailViewModel(video:self.videos[indexPath.row])
         return result
     }
-    
+    //add in the search term to the VideoClient
     func refresh(completion: @escaping () -> Void) {
         client.fetchVideo { [unowned self] data in
             self.videos += self.parser.parseVideos(data: data!)

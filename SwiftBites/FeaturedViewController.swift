@@ -5,6 +5,8 @@
 //  Created by Ziyun Zheng on 11/7/16.
 //  Copyright © 2016 Ziyun Zheng. All rights reserved.
 //
+//collection view ideas and code snippets from tutorial https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
+
 
 import UIKit
 class FeaturedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -12,7 +14,7 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 4.0, left: 2.0, bottom: 2.0, right: 2.0)
     /**
-     identify if this controller is used for search
+     identify if this controller is used for search functionality
      */
     var isSearch:Bool?
     /**
@@ -43,10 +45,8 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     
     var viewModel = FeaturedViewModel()
     override func viewDidLoad() {
-        /**
-         do not reset the title if the controller is used for search
-         */
         super.viewDidLoad()
+        //do not reset the title if the controller is used for search
         if let setTitle = self.isSearch {
             //do not need to set the navigationItem title becasue it is passed in from segue
         }
@@ -66,8 +66,6 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
                     }
                 }
         }
-        
-    // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,8 +85,6 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
                                  numberOfItemsInSection section: Int) -> Int {
         return viewModel.videos.count
     }
-    
-    // https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
@@ -124,8 +120,6 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
         }
         return cell
     }
-    //code for modifying the view from https://www.raywenderlich.com/136159/uicollectionview-tutorial-getting-started
-//    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -148,6 +142,9 @@ class FeaturedViewController: UICollectionViewController, UICollectionViewDelega
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let status = Reach().connectionStatus()
+        /**
+         check network status
+         */
         switch status {
         case .unknown, .offline:
             let alert = UIAlertController(title: "No Internet Connection", message: "Recipe detail is not available without a connection, but you can still browse your shopping list and saved recipes.", preferredStyle: UIAlertControllerStyle.alert)
